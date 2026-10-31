@@ -1,4 +1,5 @@
 import { prisma } from "../lib/db";
+import { seedAgents } from "./seed/agents";
 import { seedAmenities } from "./seed/amenities";
 import { seedCommunities } from "./seed/communities";
 
@@ -7,6 +8,7 @@ async function main() {
 
   await seedAmenities();
   await seedCommunities();
+  await seedAgents();
 
   console.log("Seed finished.");
 }
