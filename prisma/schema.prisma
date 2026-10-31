@@ -1,3 +1,8 @@
+// ==========================================================
+// YOURKEY — DATABASE SCHEMA
+// Prisma 7 + PostgreSQL (Neon)
+// ==========================================================
+
 generator client {
   provider = "prisma-client"
   output   = "../generated/prisma"
@@ -5,4 +10,275 @@ generator client {
 
 datasource db {
   provider = "postgresql"
+}
+
+
+// ==========================================================
+// ENUMS
+// ==========================================================
+
+enum Role {
+  ADMIN
+  EDITOR
+}
+
+enum PropertyPurpose {
+  SALE
+  RENT
+  OFF_PLAN
+}
+
+enum PropertyType {
+  APARTMENT
+  VILLA
+  PENTHOUSE
+  TOWNHOUSE
+}
+
+enum PublishStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum City {
+  DUBAI
+  ABU_DHABI
+}
+
+enum CommunityStatus {
+  PUBLISHED
+  HIDDEN
+}
+
+enum EnquiryType {
+  CONTACT
+  PROPERTY
+  VALUATION
+  AGENT
+}
+
+enum EnquiryStatus {
+  NEW
+  CONTACTED
+  CLOSED
+}
+
+
+// ==========================================================
+// USER (ADMIN / EDITOR)
+// ==========================================================
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         Role     @default(EDITOR)
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+
+// ==========================================================
+// COMMUNITY
+// ==========================================================
+
+model Community {
+  id            String          @id @default(cuid())
+  name          String
+  nameAr        String?
+  slug          String          @unique
+  city          City
+  description   String?         @db.Text
+  descriptionAr String?         @db.Text
+  imageUrl      String?
+  publicId      String?
+  avgBuyAED     Decimal?        @db.Decimal(14, 2)
+  avgRentAED    Decimal?        @db.Decimal(14, 2)
+  typesEn       String?
+  typesAr       String?
+  status        CommunityStatus @default(PUBLISHED)
+  sortOrder     Int             @default(0)
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  properties Property[]
+
+  @@index([city, status])
+  @@index([sortOrder])
+}
+
+
+// ==========================================================
+// AGENT
+// ==========================================================
+
+model Agent {
+  id         String   @id @default(cuid())
+  name       String
+  nameAr     String?
+  slug       String   @unique
+  position   String
+  positionAr String?
+  bio        String?  @db.Text
+  bioAr      String?  @db.Text
+  email      String?
+  phone      String?
+  imageUrl   String?
+  publicId   String?
+  sortOrder  Int      @default(0)
+  active     Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  properties Property[]
+  enquiries  Enquiry[]
+
+  @@index([active, sortOrder])
+}
+
+
+// ==========================================================
+// PROPERTY
+// ==========================================================
+
+model Property {
+  id            String          @id @default(cuid())
+  title         String
+  titleAr       String?
+  slug          String          @unique
+  description   String          @db.Text
+  descriptionAr String?         @db.Text
+
+  purpose       PropertyPurpose
+  propertyType  PropertyType
+  status        PublishStatus   @default(DRAFT)
+
+  // Price in AED. For RENT this is the yearly rent.
+  priceAED      Decimal         @db.Decimal(14, 2)
+
+  // 0 bedrooms = Studio
+  bedrooms      Int
+  bathrooms     Int
+  areaSqFt      Int
+
+  address       String?
+  city          City
+
+  communityId   String?
+  agentId       String?
+
+  featured      Boolean         @default(false)
+
+  // Off-plan only (optional)
+  developer      String?
+  completionDate DateTime?
+
+  publishedAt   DateTime?
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  community Community? @relation(fields: [communityId], references: [id], onDelete: SetNull)
+  agent     Agent?     @relation(fields: [agentId], references: [id], onDelete: SetNull)
+
+  images    PropertyImage[]
+  amenities PropertyAmenity[]
+  enquiries Enquiry[]
+
+  @@index([status, purpose])
+  @@index([city])
+  @@index([communityId])
+  @@index([agentId])
+  @@index([featured])
+  @@index([priceAED])
+  @@index([createdAt])
+}
+
+
+// ==========================================================
+// PROPERTY IMAGE
+// ==========================================================
+
+model PropertyImage {
+  id         String   @id @default(cuid())
+  propertyId String
+  imageUrl   String
+  publicId   String   @unique
+  altText    String?
+  sortOrder  Int      @default(0)
+  isPrimary  Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  property Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+
+  @@index([propertyId, sortOrder])
+}
+
+
+// ==========================================================
+// AMENITY
+// ==========================================================
+
+model Amenity {
+  id     String  @id @default(cuid())
+  name   String
+  nameAr String?
+  slug   String  @unique
+  icon   String?
+
+  properties PropertyAmenity[]
+}
+
+
+// ==========================================================
+// PROPERTY <-> AMENITY (MANY-TO-MANY)
+// ==========================================================
+
+model PropertyAmenity {
+  propertyId String
+  amenityId  String
+
+  property Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  amenity  Amenity  @relation(fields: [amenityId], references: [id], onDelete: Cascade)
+
+  @@id([propertyId, amenityId])
+  @@index([amenityId])
+}
+
+
+// ==========================================================
+// ENQUIRY
+// ==========================================================
+
+model Enquiry {
+  id         String        @id @default(cuid())
+  type       EnquiryType   @default(CONTACT)
+
+  propertyId String?
+  agentId    String?
+
+  name       String
+  email      String
+  phone      String?
+  message    String?       @db.Text
+
+  // Extra form-specific data (e.g. valuation form fields)
+  details    Json?
+
+  // Language the visitor used: "en" or "ar"
+  language   String?
+
+  status     EnquiryStatus @default(NEW)
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+
+  property Property? @relation(fields: [propertyId], references: [id], onDelete: SetNull)
+  agent    Agent?    @relation(fields: [agentId], references: [id], onDelete: SetNull)
+
+  @@index([status, createdAt])
+  @@index([type])
+  @@index([propertyId])
+  @@index([agentId])
 }
