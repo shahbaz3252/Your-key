@@ -23,7 +23,7 @@ const TYPE_MAP: Record<string, PropertyType> = {
   townhouse: "TOWNHOUSE",
 };
 
-const CITY_MAP: Record<string, City> = {
+export const CITY_MAP: Record<string, City> = {
   dubai: "DUBAI",
   "abu-dhabi": "ABU_DHABI",
 };
@@ -36,7 +36,10 @@ function normalize(value: unknown) {
     : value;
 }
 
-function mapped<T extends string>(map: Record<string, T>, label: string) {
+export function mapped<T extends string>(
+  map: Record<string, T>,
+  label: string
+) {
   const keys = Object.keys(map) as [string, ...string[]];
   return z
     .preprocess(
@@ -67,17 +70,14 @@ const bool = z
   .enum(["true", "false"], { error: 'Use "true" or "false"' })
   .transform((v) => v === "true");
 
-const communitySlug = z
-  .preprocess(
-    (v) =>
-      typeof v === "string"
-        ? v.trim().toLowerCase().replace(/\s+/g, "-")
-        : v,
-    z
-      .string()
-      .max(100)
-      .regex(/^[a-z0-9-]+$/, { error: "Invalid community slug" })
-  );
+const communitySlug = z.preprocess(
+  (v) =>
+    typeof v === "string" ? v.trim().toLowerCase().replace(/\s+/g, "-") : v,
+  z
+    .string()
+    .max(100)
+    .regex(/^[a-z0-9-]+$/, { error: "Invalid community slug" })
+);
 
 export const PROPERTY_SORTS = [
   "newest",
@@ -143,7 +143,9 @@ const QUERY_KEYS = [
  * phir validate karta hai. Galat input par ZodError throw hota hai
  * (handleError use 422 bana dega).
  */
-export function parsePropertyQuery(searchParams: URLSearchParams): PropertyQuery {
+export function parsePropertyQuery(
+  searchParams: URLSearchParams
+): PropertyQuery {
   const raw: Record<string, string> = {};
 
   for (const key of QUERY_KEYS) {
