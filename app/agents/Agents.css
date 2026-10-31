@@ -1,0 +1,1185 @@
+/* ==========================================================
+   YOURKEY — AGENTS
+========================================================== */
+
+.agents-page {
+  position:
+    relative;
+
+  width:
+    100%;
+
+  min-height:
+    100vh;
+
+  overflow:
+    hidden;
+
+  background:
+    #030b14;
+
+  color:
+    #f4f1eb;
+}
+
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.agents-container {
+  position:
+    relative;
+
+  z-index:
+    5;
+
+  width:
+    var(
+      --site-content-width,
+      min(
+        1540px,
+        calc(100% - 9vw)
+      )
+    );
+
+  margin:
+    0 auto;
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.agents-hero {
+  position:
+    relative;
+
+  min-height:
+    500px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  overflow:
+    hidden;
+
+  padding:
+    calc(
+      var(
+        --site-header-height,
+        82px
+      )
+      + 85px
+    )
+    0
+    90px;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(
+        201,
+        166,
+        107,
+        0.07
+      ),
+      transparent
+      32%
+    ),
+    linear-gradient(
+      180deg,
+      #071321,
+      #030b14
+    );
+
+  border-bottom:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.06
+    );
+}
+
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.agents-grid-bg {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  pointer-events:
+    none;
+
+  opacity:
+    0.17;
+
+  background-image:
+    linear-gradient(
+      rgba(
+        255,
+        255,
+        255,
+        0.025
+      )
+      1px,
+      transparent
+      1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(
+        255,
+        255,
+        255,
+        0.025
+      )
+      1px,
+      transparent
+      1px
+    );
+
+  background-size:
+    105px
+    105px;
+}
+
+
+/* ==========================================================
+   ORBITS
+========================================================== */
+
+.agents-hero-orbit {
+  position:
+    absolute;
+
+  pointer-events:
+    none;
+
+  border:
+    1px solid
+    rgba(
+      201,
+      166,
+      107,
+      0.07
+    );
+
+  border-radius:
+    50%;
+}
+
+.agents-hero-orbit-one {
+  width:
+    480px;
+
+  height:
+    480px;
+
+  left:
+    -280px;
+
+  top:
+    -280px;
+}
+
+.agents-hero-orbit-two {
+  width:
+    360px;
+
+  height:
+    360px;
+
+  right:
+    -190px;
+
+  bottom:
+    -250px;
+}
+
+
+/* ==========================================================
+   HERO CONTENT
+========================================================== */
+
+.agents-hero-content {
+  max-width:
+    850px;
+
+  margin:
+    0 auto;
+
+  text-align:
+    center;
+}
+
+
+/* ==========================================================
+   KICKER
+========================================================== */
+
+.agents-kicker {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    13px;
+
+  margin-bottom:
+    25px;
+}
+
+.agents-kicker i {
+  width:
+    34px;
+
+  height:
+    1px;
+
+  background:
+    #c9a66b;
+}
+
+.agents-kicker span {
+  font-size:
+    10px;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    0.28em;
+
+  color:
+    #c9a66b;
+}
+
+
+/* ==========================================================
+   HERO HEADING
+========================================================== */
+
+.agents-hero h1 {
+  margin:
+    0;
+
+  font-size:
+    clamp(
+      3.3rem,
+      5vw,
+      5.5rem
+    );
+
+  font-weight:
+    700;
+
+  line-height:
+    0.98;
+
+  letter-spacing:
+    -0.055em;
+
+  color:
+    #f4f1eb;
+}
+
+.agents-hero h1 span {
+  display:
+    block;
+
+  margin-top:
+    7px;
+
+  color:
+    #c9a66b;
+}
+
+
+/* ==========================================================
+   HERO PARAGRAPH
+========================================================== */
+
+.agents-hero-content > p {
+  max-width:
+    720px;
+
+  margin:
+    27px
+    auto
+    0;
+
+  font-size:
+    16px;
+
+  line-height:
+    1.72;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.56
+    );
+}
+
+
+/* ==========================================================
+   TEAM SECTION
+========================================================== */
+
+.agents-team-section {
+  position:
+    relative;
+
+  padding:
+    85px
+    0
+    110px;
+
+  background:
+    #030b14;
+}
+
+
+/* ==========================================================
+   SECTION TOP
+========================================================== */
+
+.agents-section-top {
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(
+      0,
+      1fr
+    )
+    minmax(
+      280px,
+      450px
+    );
+
+  align-items:
+    end;
+
+  gap:
+    70px;
+
+  margin-bottom:
+    58px;
+
+  padding-bottom:
+    34px;
+
+  border-bottom:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.07
+    );
+}
+
+.agents-section-label {
+  margin-bottom:
+    16px;
+
+  font-size:
+    10px;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    0.22em;
+
+  color:
+    #c9a66b;
+}
+
+.agents-section-top h2 {
+  margin:
+    0;
+
+  font-size:
+    clamp(
+      2.8rem,
+      4vw,
+      4.2rem
+    );
+
+  font-weight:
+    700;
+
+  line-height:
+    0.98;
+
+  letter-spacing:
+    -0.05em;
+
+  color:
+    #f4f1eb;
+}
+
+.agents-section-top h2 span {
+  display:
+    block;
+
+  color:
+    #c9a66b;
+}
+
+.agents-section-top > p {
+  margin:
+    0;
+
+  font-size:
+    15px;
+
+  line-height:
+    1.72;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.49
+    );
+}
+
+
+/* ==========================================================
+   TEAM GRID
+========================================================== */
+
+.agents-team-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap:
+    clamp(
+      16px,
+      1.5vw,
+      24px
+    );
+}
+
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.agent-card {
+  position:
+    relative;
+
+  min-width:
+    0;
+
+  min-height:
+    515px;
+
+  overflow:
+    hidden;
+
+  padding:
+    38px
+    28px
+    28px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.085
+    );
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(
+        17,
+        34,
+        51,
+        0.98
+      ),
+      rgba(
+        7,
+        20,
+        32,
+        0.98
+      )
+    );
+
+  box-shadow:
+    0
+    25px
+    70px
+    rgba(
+      0,
+      0,
+      0,
+      0.16
+    );
+
+  transition:
+    transform
+    0.4s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    ),
+    border-color
+    0.3s
+    ease,
+    box-shadow
+    0.3s
+    ease;
+}
+
+.agent-card::before {
+  content:
+    "";
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  pointer-events:
+    none;
+
+  opacity:
+    0;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(
+        201,
+        166,
+        107,
+        0.1
+      ),
+      transparent
+      48%
+    );
+
+  transition:
+    opacity
+    0.35s
+    ease;
+}
+
+.agent-card:hover {
+  transform:
+    translateY(
+      -7px
+    );
+
+  border-color:
+    rgba(
+      201,
+      166,
+      107,
+      0.29
+    );
+
+  box-shadow:
+    0
+    34px
+    85px
+    rgba(
+      0,
+      0,
+      0,
+      0.25
+    );
+}
+
+.agent-card:hover::before {
+  opacity:
+    1;
+}
+
+
+/* ==========================================================
+   CARD NUMBER
+========================================================== */
+
+.agent-card-number {
+  position:
+    absolute;
+
+  top:
+    20px;
+
+  left:
+    20px;
+
+  z-index:
+    2;
+
+  font-size:
+    9px;
+
+  letter-spacing:
+    0.18em;
+
+  color:
+    rgba(
+      201,
+      166,
+      107,
+      0.55
+    );
+}
+
+
+/* ==========================================================
+   IMAGE
+========================================================== */
+
+.agent-image-area {
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  display:
+    flex;
+
+  justify-content:
+    center;
+
+  margin-bottom:
+    28px;
+}
+
+.agent-image-ring {
+  width:
+    124px;
+
+  height:
+    124px;
+
+  padding:
+    5px;
+
+  border:
+    1px solid
+    rgba(
+      201,
+      166,
+      107,
+      0.37
+    );
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+}
+
+.agent-image-ring img {
+  width:
+    100%;
+
+  height:
+    100%;
+
+  display:
+    block;
+
+  object-fit:
+    cover;
+
+  object-position:
+    center;
+
+  border-radius:
+    50%;
+}
+
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.agent-card-content {
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  text-align:
+    center;
+}
+
+.agent-card-content h3 {
+  margin:
+    0;
+
+  font-size:
+    22px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1.2;
+
+  letter-spacing:
+    -0.03em;
+
+  color:
+    #f4f1eb;
+}
+
+.agent-role {
+  margin-top:
+    10px;
+
+  font-size:
+    9px;
+
+  font-weight:
+    600;
+
+  line-height:
+    1.5;
+
+  letter-spacing:
+    0.23em;
+
+  color:
+    #c9a66b;
+}
+
+.agent-card-content p {
+  max-width:
+    310px;
+
+  margin:
+    20px
+    auto
+    0;
+
+  font-size:
+    14px;
+
+  line-height:
+    1.62;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.5
+    );
+}
+
+
+/* ==========================================================
+   CARD BOTTOM
+========================================================== */
+
+.agent-card-bottom {
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  margin-top:
+    auto;
+
+  padding-top:
+    28px;
+}
+
+.agent-card-rule {
+  display:
+    block;
+
+  width:
+    100%;
+
+  height:
+    1px;
+
+  margin-bottom:
+    18px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+}
+
+
+/* ==========================================================
+   ACTIONS
+========================================================== */
+
+.agent-actions {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    11px;
+}
+
+.agent-action {
+  width:
+    40px;
+
+  height:
+    40px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.11
+    );
+
+  border-radius:
+    50%;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.56
+    );
+
+  transition:
+    transform
+    0.25s
+    ease,
+    border-color
+    0.25s
+    ease,
+    background
+    0.25s
+    ease,
+    color
+    0.25s
+    ease;
+}
+
+.agent-action svg {
+  width:
+    16px;
+
+  height:
+    16px;
+}
+
+.agent-action:hover {
+  transform:
+    translateY(
+      -2px
+    );
+
+  border-color:
+    #c9a66b;
+
+  background:
+    rgba(
+      201,
+      166,
+      107,
+      0.07
+    );
+
+  color:
+    #c9a66b;
+}
+
+
+/* ==========================================================
+   DECORATION
+========================================================== */
+
+.agent-card-orbit {
+  position:
+    absolute;
+
+  right:
+    -75px;
+
+  bottom:
+    -75px;
+
+  width:
+    150px;
+
+  height:
+    150px;
+
+  border:
+    1px solid
+    rgba(
+      201,
+      166,
+      107,
+      0.06
+    );
+
+  border-radius:
+    50%;
+
+  pointer-events:
+    none;
+}
+
+
+/* ==========================================================
+   LARGE LAPTOP
+========================================================== */
+
+@media (
+  max-width: 1250px
+) {
+
+  .agents-team-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+
+  .agent-card {
+    min-height:
+      480px;
+  }
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (
+  max-width: 900px
+) {
+
+  .agents-hero {
+    min-height:
+      430px;
+
+    padding-bottom:
+      70px;
+  }
+
+
+  .agents-team-section {
+    padding:
+      70px
+      0
+      90px;
+  }
+
+
+  .agents-section-top {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      24px;
+  }
+
+
+  .agents-section-top > p {
+    max-width:
+      580px;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (
+  max-width: 650px
+) {
+
+  .agents-hero {
+    min-height:
+      auto;
+
+    padding:
+      calc(
+        var(
+          --site-header-height,
+          66px
+        )
+        + 55px
+      )
+      0
+      60px;
+  }
+
+
+  .agents-kicker {
+    margin-bottom:
+      19px;
+  }
+
+
+  .agents-hero h1 {
+    font-size:
+      clamp(
+        2.7rem,
+        13vw,
+        3.8rem
+      );
+  }
+
+
+  .agents-hero-content > p {
+    margin-top:
+      22px;
+
+    font-size:
+      15px;
+  }
+
+
+  .agents-team-section {
+    padding:
+      55px
+      0
+      72px;
+  }
+
+
+  .agents-section-top {
+    margin-bottom:
+      38px;
+
+    padding-bottom:
+      26px;
+  }
+
+
+  .agents-section-top h2 {
+    font-size:
+      2.55rem;
+  }
+
+
+  .agents-section-top > p {
+    font-size:
+      14px;
+  }
+
+
+  .agents-team-grid {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      16px;
+  }
+
+
+  .agent-card {
+    min-height:
+      475px;
+
+    padding:
+      36px
+      23px
+      25px;
+  }
+
+
+  .agent-image-ring {
+    width:
+      116px;
+
+    height:
+      116px;
+  }
+
+}

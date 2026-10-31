@@ -1,0 +1,879 @@
+/* ==========================================================
+   TOWERS UNDER CONSTRUCTION
+   COMPACT VIEWPORT VERSION
+========================================================== */
+
+.towers-section {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    80px
+    0
+    48px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #071019 0%,
+      #08131e 100%
+    );
+
+  color:
+    #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* subtle vertical architecture lines */
+.towers-section::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 24.9%,
+      rgba(255, 255, 255, 0.025) 25%,
+      transparent 25.1%,
+      transparent 49.9%,
+      rgba(255, 255, 255, 0.025) 50%,
+      transparent 50.1%,
+      transparent 74.9%,
+      rgba(255, 255, 255, 0.025) 75%,
+      transparent 75.1%
+    );
+}
+
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.towers-container {
+  position: relative;
+
+  z-index: 2;
+
+  width:
+    min(
+      1540px,
+      calc(100% - 9vw)
+    );
+
+  margin:
+    0 auto;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.towers-header {
+  max-width:
+    900px;
+
+  margin:
+    0 auto
+    38px;
+
+  text-align:
+    center;
+}
+
+
+/* ==========================================================
+   SMALL LABEL
+========================================================== */
+
+.towers-kicker {
+  margin-bottom:
+    10px;
+
+  font-size:
+    11px;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    0.16em;
+
+  color:
+    #c9a66b;
+}
+
+
+/* ==========================================================
+   MAIN HEADING
+========================================================== */
+
+.towers-header h2 {
+  margin:
+    0;
+
+  font-family:
+    inherit;
+
+  font-style:
+    normal;
+
+  font-size:
+    50px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1.05;
+
+  letter-spacing:
+    -0.035em;
+
+  color:
+    #ffffff;
+}
+
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.towers-header p {
+  max-width:
+    680px;
+
+  margin:
+    14px
+    auto
+    0;
+
+  font-size:
+    16px !important;
+
+  font-weight:
+    400;
+
+  line-height:
+    1.5 !important;
+
+  color:
+    #ffffff !important;
+}
+
+
+/* ==========================================================
+   VIEW ALL BUTTON
+========================================================== */
+
+.towers-view-all {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  min-width:
+    210px;
+
+  min-height:
+    44px;
+
+  margin-top:
+    20px;
+
+  padding:
+    0
+    20px;
+
+  border:
+    1px solid
+    rgba(
+      201,
+      166,
+      107,
+      0.45
+    );
+
+  border-radius:
+    0;
+
+  background:
+    transparent;
+
+  text-decoration:
+    none;
+
+  font-size:
+    11px;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    0.14em;
+
+  color:
+    #ffffff;
+
+  transition:
+    background
+    0.3s
+    ease,
+    color
+    0.3s
+    ease,
+    border-color
+    0.3s
+    ease,
+    transform
+    0.3s
+    ease;
+}
+
+
+.towers-view-all:hover {
+  transform:
+    translateY(-2px);
+
+  background:
+    #c9a66b;
+
+  border-color:
+    #c9a66b;
+
+  color:
+    #071019;
+}
+
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.towers-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap:
+    20px;
+}
+
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.tower-card {
+  position:
+    relative;
+
+  min-width:
+    0;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.09
+    );
+
+  border-radius:
+    0;
+
+  background:
+    #091521;
+
+  transition:
+    transform
+    0.4s
+    ease,
+    border-color
+    0.4s
+    ease,
+    box-shadow
+    0.4s
+    ease;
+}
+
+
+.tower-card:hover {
+  transform:
+    translateY(-5px);
+
+  border-color:
+    rgba(
+      201,
+      166,
+      107,
+      0.4
+    );
+
+  box-shadow:
+    0
+    24px
+    60px
+    rgba(
+      0,
+      0,
+      0,
+      0.2
+    );
+}
+
+
+.tower-card-link {
+  position:
+    absolute;
+
+  z-index:
+    9;
+
+  inset:
+    0;
+}
+
+
+/* ==========================================================
+   IMAGE
+========================================================== */
+
+.tower-card-image-wrap {
+  position:
+    relative;
+
+  width:
+    100%;
+
+  height:
+    230px;
+
+  overflow:
+    hidden;
+
+  background:
+    #030608;
+}
+
+
+.tower-card-image {
+  width:
+    100%;
+
+  height:
+    100%;
+
+  display:
+    block;
+
+  object-fit:
+    cover;
+
+  transition:
+    transform
+    0.75s
+    cubic-bezier(
+      0.2,
+      0.75,
+      0.25,
+      1
+    );
+}
+
+
+.tower-card:hover
+.tower-card-image {
+  transform:
+    scale(1.04);
+}
+
+
+/* ==========================================================
+   IMAGE OVERLAY
+========================================================== */
+
+.tower-card-overlay {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  pointer-events:
+    none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(2, 7, 11, 0.04) 20%,
+      rgba(2, 7, 11, 0.08) 50%,
+      rgba(2, 7, 11, 0.82) 100%
+    );
+}
+
+
+/* ==========================================================
+   CARD TOP
+========================================================== */
+
+.tower-card-top {
+  position:
+    absolute;
+
+  z-index:
+    3;
+
+  top:
+    16px;
+
+  left:
+    17px;
+
+  right:
+    17px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    18px;
+}
+
+
+.tower-card-top > span {
+  font-size:
+    10px;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    0.15em;
+
+  color:
+    #c9a66b;
+}
+
+
+.tower-card-top small {
+  font-size:
+    10px;
+
+  font-weight:
+    500;
+
+  letter-spacing:
+    0.12em;
+
+  color:
+    #ffffff;
+}
+
+
+/* ==========================================================
+   CARD BOTTOM
+========================================================== */
+
+.tower-card-bottom {
+  position:
+    absolute;
+
+  z-index:
+    3;
+
+  left:
+    18px;
+
+  right:
+    18px;
+
+  bottom:
+    17px;
+
+  display:
+    flex;
+
+  align-items:
+    flex-end;
+
+  justify-content:
+    space-between;
+
+  gap:
+    18px;
+}
+
+
+.tower-card-bottom h3 {
+  margin:
+    0
+    0
+    5px;
+
+  font-family:
+    inherit;
+
+  font-style:
+    normal;
+
+  font-size:
+    20px;
+
+  font-weight:
+    600;
+
+  line-height:
+    1.15;
+
+  letter-spacing:
+    -0.025em;
+
+  color:
+    #ffffff;
+}
+
+
+.tower-card-bottom p {
+  margin:
+    0;
+
+  font-size:
+    13px !important;
+
+  line-height:
+    1.35 !important;
+
+  color:
+    #ffffff !important;
+}
+
+
+.tower-card-arrow {
+  flex:
+    0
+    0
+    auto;
+
+  font-size:
+    18px;
+
+  color:
+    #c9a66b;
+
+  transition:
+    transform
+    0.3s
+    ease;
+}
+
+
+.tower-card:hover
+.tower-card-arrow {
+  transform:
+    translate(
+      3px,
+      -3px
+    );
+}
+
+
+/* ==========================================================
+   CARD META
+========================================================== */
+
+.tower-card-meta {
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap:
+    20px;
+
+  padding:
+    16px
+    18px
+    18px;
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.06
+    );
+}
+
+
+.tower-card-meta > div {
+  min-width:
+    0;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    4px;
+}
+
+
+.tower-card-meta small {
+  font-size:
+    10px;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    0.12em;
+
+  color:
+    #c9a66b;
+}
+
+
+.tower-card-meta strong {
+  font-size:
+    14px;
+
+  font-weight:
+    500;
+
+  line-height:
+    1.2;
+
+  color:
+    #ffffff;
+}
+
+
+/* ==========================================================
+   LARGE DESKTOP / VIEWPORT FIT
+========================================================== */
+
+@media (
+  min-width: 1200px
+) and (
+  min-height: 780px
+) {
+
+  .towers-section {
+    min-height:
+      calc(
+        100vh - 82px
+      );
+
+    display:
+      flex;
+
+    align-items:
+      center;
+  }
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1100px) {
+
+  .towers-section {
+    padding:
+      70px
+      0;
+  }
+
+
+  .towers-container {
+    width:
+      calc(
+        100% - 64px
+      );
+  }
+
+
+  .towers-header h2 {
+    font-size:
+      46px;
+  }
+
+
+  .towers-grid {
+    grid-template-columns:
+      1fr
+      1fr;
+  }
+
+
+  .tower-card:last-child {
+    grid-column:
+      1 / -1;
+  }
+
+
+  .tower-card-image-wrap {
+    height:
+      250px;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+  .towers-section {
+    padding:
+      65px
+      0;
+  }
+
+
+  .towers-container {
+    width:
+      calc(
+        100% - 36px
+      );
+  }
+
+
+  .towers-header {
+    margin-bottom:
+      40px;
+  }
+
+
+  .towers-header h2 {
+    font-size:
+      40px;
+
+    line-height:
+      1.05;
+  }
+
+
+  .towers-header p {
+    margin-top:
+      14px;
+
+    font-size:
+      15px !important;
+
+    line-height:
+      1.55 !important;
+  }
+
+
+  .towers-view-all {
+    width:
+      100%;
+
+    min-height:
+      46px;
+
+    margin-top:
+      24px;
+  }
+
+
+  .towers-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .tower-card:last-child {
+    grid-column:
+      auto;
+  }
+
+
+  .tower-card-image-wrap {
+    height:
+      230px;
+  }
+
+
+  .tower-card-bottom h3 {
+    font-size:
+      20px;
+  }
+
+}
+/* ==========================================================
+   TOWERS — ARABIC RTL
+========================================================== */
+
+.towers-arabic {
+  direction: rtl;
+}
+
+.towers-arabic
+.towers-header {
+  text-align: right;
+}
+
+.towers-arabic
+.tower-card-bottom {
+  direction: rtl;
+  text-align: right;
+}
+
+.towers-arabic
+.tower-card-top {
+  direction: rtl;
+}
+
+.towers-arabic
+.tower-card-meta {
+  direction: rtl;
+  text-align: right;
+}
+
+.towers-arabic
+.tower-card-arrow {
+  transform: scaleX(-1);
+}

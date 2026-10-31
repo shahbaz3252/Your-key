@@ -1,0 +1,1344 @@
+/* ==========================================================
+   YOURKEY — INVESTMENT INTELLIGENCE
+========================================================== */
+
+.investment-section {
+  position: relative;
+  width: 100%;
+  padding: 80px 0;
+  overflow: hidden;
+
+  background: #030b13;
+  color: #ffffff;
+}
+
+
+.investment-container {
+  width:
+    min(
+      1540px,
+      calc(100% - 9vw)
+    );
+
+  margin: 0 auto;
+}
+
+
+/* ==========================================================
+   TOP
+========================================================== */
+
+.investment-top {
+  display: grid;
+  grid-template-columns: 1.6fr 0.72fr;
+  gap: 80px;
+  align-items: center;
+
+  margin-bottom: 58px;
+}
+
+
+.investment-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  margin-bottom: 24px;
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+
+  color: #c9a66b;
+}
+
+
+.investment-eyebrow i {
+  width: 58px;
+  height: 1px;
+
+  display: block;
+
+  background:
+    rgba(201, 166, 107, 0.48);
+}
+
+
+.investment-heading h2 {
+  max-width: 860px;
+
+  margin: 0;
+
+  font-size: 50px !important;
+  font-weight: 700 !important;
+
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+
+  color: #ffffff;
+}
+
+
+.investment-heading h2 span {
+  display: block;
+
+  font-size: inherit !important;
+  font-weight: 700 !important;
+
+  color: #c9a66b;
+}
+
+
+.investment-copy {
+  max-width: 440px;
+}
+
+
+.investment-copy p {
+  margin: 0;
+
+  font-size: 16px !important;
+  font-weight: 400;
+
+  line-height: 1.65 !important;
+
+  color: #ffffff !important;
+}
+
+
+.investment-market-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-top: 24px;
+}
+
+
+.investment-market-meta span {
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+
+  color:
+    rgba(255, 255, 255, 0.53);
+}
+
+
+.investment-market-meta i {
+  width: 35px;
+  height: 1px;
+
+  background: #c9a66b;
+}
+
+
+/* ==========================================================
+   STATS
+========================================================== */
+
+.investment-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  margin-bottom: 55px;
+}
+
+
+.investment-stat {
+  min-height: 185px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 25px 34px;
+
+  border-right:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+}
+
+
+.investment-stat:last-child {
+  border-right: none;
+}
+
+
+.investment-stat small {
+  margin-bottom: auto;
+
+  font-size: 10px;
+
+  letter-spacing: 0.2em;
+
+  color:
+    rgba(255, 255, 255, 0.38);
+}
+
+
+.investment-stat strong {
+  margin-top: 20px;
+
+  font-size:
+    clamp(
+      2.5rem,
+      3vw,
+      3.6rem
+    );
+
+  font-weight: 700 !important;
+
+  line-height: 1;
+
+  color: #c9a66b;
+}
+
+
+.investment-stat > span {
+  margin-top: 18px;
+
+  font-size: 16px;
+
+  color: #ffffff;
+}
+
+
+/* ==========================================================
+   MORTGAGE TOOLS WRAPPER
+========================================================== */
+
+.mortgage-tools {
+  width: 100%;
+
+  padding:
+    34px
+    32px
+    32px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.14);
+
+  border-radius: 8px;
+
+  background:
+    #34445a;
+}
+
+
+.mortgage-tools-heading {
+  text-align: center;
+}
+
+
+.mortgage-tools-heading h3 {
+  margin: 0;
+
+  font-size: 24px;
+  font-weight: 700;
+
+  line-height: 1.1;
+
+  color: #ffffff;
+}
+
+
+.mortgage-tools-heading p {
+  margin:
+    12px
+    0
+    0;
+
+  font-size: 14px;
+
+  color:
+    rgba(255, 255, 255, 0.72);
+}
+
+
+.mortgage-tools-divider {
+  width: 100%;
+  height: 1px;
+
+  margin:
+    22px
+    0
+    30px;
+
+  background:
+    rgba(255, 255, 255, 0.13);
+}
+
+
+/* ==========================================================
+   TABS
+========================================================== */
+
+.mortgage-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-bottom: 32px;
+}
+
+
+.mortgage-tab {
+  min-height: 36px;
+
+  padding:
+    0
+    18px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.22);
+
+  border-radius: 8px;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.07em;
+
+  color:
+    rgba(255, 255, 255, 0.68);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+
+.mortgage-tab:hover {
+  border-color:
+    rgba(201, 166, 107, 0.7);
+
+  color: #ffffff;
+}
+
+
+.mortgage-tab.active {
+  border-color: #d19d49;
+
+  background: #d19d49;
+
+  color: #142238;
+}
+
+
+/* ==========================================================
+   MAIN TOOL LAYOUT
+========================================================== */
+
+.mortgage-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(330px, 0.95fr)
+    minmax(0, 1.85fr);
+
+  gap: 30px;
+
+  align-items: stretch;
+}
+
+
+.mortgage-layout-calculator {
+  grid-template-columns:
+    1fr
+    1fr;
+}
+
+
+/* ==========================================================
+   CONTROLS
+========================================================== */
+
+.mortgage-controls {
+  min-width: 0;
+}
+
+
+.mortgage-field {
+  margin-bottom: 24px;
+}
+
+
+.mortgage-field-head {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 9px;
+}
+
+
+.mortgage-field-head label {
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.05em;
+
+  color:
+    rgba(255, 255, 255, 0.73);
+}
+
+
+.mortgage-field-head span {
+  font-size: 11px;
+
+  color: #d7a046;
+}
+
+
+/* ==========================================================
+   RANGE
+========================================================== */
+
+.mortgage-range {
+  --range-progress: 0%;
+
+  width: 100%;
+  height: 6px;
+
+  display: block;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  border: 0;
+
+  border-radius: 999px;
+
+  outline: 0;
+
+  background:
+    linear-gradient(
+      to right,
+      #10233a 0%,
+      #10233a
+      var(--range-progress),
+      #2c3c50
+      var(--range-progress),
+      #2c3c50 100%
+    );
+
+  cursor: pointer;
+}
+
+
+.mortgage-range::-webkit-slider-runnable-track {
+  height: 6px;
+
+  background: transparent;
+
+  border: 0;
+}
+
+
+.mortgage-range::-webkit-slider-thumb {
+  width: 17px;
+  height: 17px;
+
+  margin-top: -5.5px;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  border:
+    1px solid
+    #071321;
+
+  border-radius: 50%;
+
+  background: #1d3049;
+
+  box-shadow:
+    0 1px 2px
+    rgba(0, 0, 0, 0.35);
+}
+
+
+.mortgage-range::-moz-range-track {
+  height: 6px;
+
+  border-radius: 999px;
+
+  background: #2c3c50;
+}
+
+
+.mortgage-range::-moz-range-progress {
+  height: 6px;
+
+  border-radius: 999px;
+
+  background: #10233a;
+}
+
+
+.mortgage-range::-moz-range-thumb {
+  width: 17px;
+  height: 17px;
+
+  border:
+    1px solid
+    #071321;
+
+  border-radius: 50%;
+
+  background: #1d3049;
+}
+
+
+/* ==========================================================
+   COMMON RESULTS
+========================================================== */
+
+.mortgage-result-grid,
+.refinance-top-results,
+.affordability-result-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 12px;
+}
+
+
+.mortgage-result-box {
+  min-height: 84px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 11px;
+
+  padding:
+    16px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.14);
+
+  border-radius: 8px;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+}
+
+
+.mortgage-result-box small {
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.04em;
+
+  color:
+    rgba(255, 255, 255, 0.52);
+}
+
+
+.mortgage-result-box strong {
+  font-size: 19px;
+
+  font-weight: 500;
+
+  color: #ffffff;
+}
+
+
+.mortgage-result-box
+.mortgage-result-accent {
+  color: #d6a047;
+}
+
+
+/* ==========================================================
+   MORTGAGE MAIN RESULT
+========================================================== */
+
+.mortgage-primary-result {
+  min-height: 420px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 25px 20px 20px;
+
+  overflow: hidden;
+
+  border-radius: 8px;
+
+  background: #1e2d43;
+}
+
+
+/* ==========================================================
+   DONUT
+========================================================== */
+
+.mortgage-donut {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 13px;
+}
+
+
+.mortgage-donut-circle {
+  --down-angle: 90deg;
+
+  position: relative;
+
+  width: 140px;
+  height: 140px;
+
+  border-radius: 50%;
+
+  background:
+    conic-gradient(
+      #d6a047
+      0
+      var(--down-angle),
+
+      #7667ee
+      var(--down-angle)
+      360deg
+    );
+}
+
+
+.mortgage-donut-hole {
+  position: absolute;
+
+  inset: 22px;
+
+  border-radius: 50%;
+
+  background: #1e2d43;
+}
+
+
+.mortgage-donut-legend {
+  display: flex;
+
+  gap: 25px;
+}
+
+
+.mortgage-donut-legend span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 10px;
+
+  color:
+    rgba(255, 255, 255, 0.72);
+}
+
+
+.mortgage-donut-legend i {
+  width: 12px;
+  height: 12px;
+
+  display: block;
+}
+
+
+.legend-down {
+  background: #d6a047;
+}
+
+
+.legend-loan {
+  background: #7667ee;
+}
+
+
+/* ==========================================================
+   MONTHLY
+========================================================== */
+
+.mortgage-monthly {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin:
+    20px
+    0;
+}
+
+
+.mortgage-monthly strong {
+  font-size: 28px;
+
+  font-weight: 500;
+
+  color: #ffffff;
+}
+
+
+.mortgage-monthly span {
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.04em;
+
+  color:
+    rgba(255, 255, 255, 0.46);
+}
+
+
+/* ==========================================================
+   TOTAL LOAN
+========================================================== */
+
+.mortgage-total {
+  width: 100%;
+
+  margin-top: auto;
+
+  padding:
+    17px
+    18px;
+
+  text-align: center;
+
+  background: #d19d49;
+
+  color: #0b1727;
+}
+
+
+.mortgage-total small {
+  display: block;
+
+  font-size: 10px;
+
+  letter-spacing: 0.07em;
+}
+
+
+.mortgage-total > strong {
+  display: block;
+
+  margin-top: 7px;
+
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+
+.mortgage-total-actions {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 12px;
+
+  margin-top: 18px;
+}
+
+
+.mortgage-total-actions button {
+  min-height: 37px;
+
+  border: 0;
+
+  border-radius: 7px;
+
+  background: #0d1a2d;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.04em;
+
+  color: #ffffff;
+}
+
+
+/* ==========================================================
+   SVG LINE CHART
+========================================================== */
+
+.mortgage-line-chart {
+  min-width: 0;
+
+  padding-top: 2px;
+}
+
+
+.mortgage-chart-title {
+  margin-bottom: 12px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.05em;
+
+  color:
+    rgba(255, 255, 255, 0.72);
+}
+
+
+.mortgage-line-chart svg {
+  width: 100%;
+
+  height: 305px;
+
+  overflow: visible;
+}
+
+
+.mortgage-chart-grid {
+  stroke:
+    rgba(255, 255, 255, 0.09);
+
+  stroke-width: 1;
+
+  stroke-dasharray: 3 4;
+}
+
+
+.mortgage-chart-line {
+  fill: none;
+
+  stroke-width: 2;
+
+  vector-effect:
+    non-scaling-stroke;
+}
+
+
+.mortgage-chart-line-one {
+  stroke: #7667ee;
+}
+
+
+.mortgage-chart-line-two {
+  stroke: #d6a047;
+}
+
+
+.mortgage-year-axis {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 3px;
+
+  margin-top: -6px;
+}
+
+
+.mortgage-year-axis span {
+  font-size: 9px;
+
+  color:
+    rgba(255, 255, 255, 0.45);
+}
+
+
+.mortgage-chart-legend {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 20px;
+
+  margin-top: 18px;
+}
+
+
+.mortgage-chart-legend span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 10px;
+
+  color:
+    rgba(255, 255, 255, 0.6);
+}
+
+
+.mortgage-dot {
+  width: 8px;
+  height: 8px;
+
+  display: inline-block;
+
+  border-radius: 50%;
+}
+
+
+.mortgage-dot-one {
+  background: #7667ee;
+}
+
+
+.mortgage-dot-two {
+  background: #d6a047;
+}
+
+
+/* ==========================================================
+   REFINANCING
+========================================================== */
+
+.refinance-results {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+
+.refinance-saving {
+  min-height: 133px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  border:
+    1px solid
+    rgba(201, 166, 107, 0.55);
+
+  border-radius: 8px;
+
+  text-align: center;
+
+  background:
+    rgba(201, 166, 107, 0.06);
+}
+
+
+.refinance-saving small {
+  font-size: 10px;
+
+  letter-spacing: 0.08em;
+
+  color: #d3a049;
+}
+
+
+.refinance-saving strong {
+  margin:
+    11px
+    0
+    5px;
+
+  font-size: 28px;
+
+  font-weight: 500;
+
+  color: #d6a047;
+}
+
+
+.refinance-saving span {
+  font-size: 11px;
+
+  color:
+    rgba(255, 255, 255, 0.55);
+}
+
+
+/* ==========================================================
+   RENT VS BUY
+========================================================== */
+
+.rent-buy-verdict {
+  min-height: 82px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 15px;
+
+  border:
+    1px solid
+    rgba(201, 166, 107, 0.5);
+
+  border-radius: 8px;
+
+  background:
+    rgba(201, 166, 107, 0.05);
+
+  text-align: center;
+}
+
+
+.rent-buy-verdict small {
+  font-size: 10px;
+
+  color:
+    rgba(255, 255, 255, 0.5);
+}
+
+
+.rent-buy-verdict strong {
+  font-size: 17px;
+
+  font-weight: 500;
+
+  color: #d6a047;
+}
+
+
+/* ==========================================================
+   AFFORDABILITY
+========================================================== */
+
+.affordability-results {
+  min-width: 0;
+}
+
+
+.affordability-main {
+  min-height: 108px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 16px;
+
+  padding: 20px;
+
+  border:
+    1px solid
+    rgba(201, 166, 107, 0.55);
+
+  border-radius: 8px;
+
+  background:
+    rgba(201, 166, 107, 0.05);
+
+  text-align: center;
+}
+
+
+.affordability-main small {
+  font-size: 10px;
+
+  letter-spacing: 0.08em;
+
+  color: #d6a047;
+}
+
+
+.affordability-main strong {
+  margin-top: 10px;
+
+  font-size: 29px;
+
+  font-weight: 500;
+
+  color: #d6a047;
+}
+
+
+.affordability-bars {
+  margin-top: 24px;
+}
+
+
+.affordability-bar-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 12px;
+}
+
+
+.affordability-bar-row span {
+  width: 95px;
+
+  flex: 0 0 auto;
+
+  text-align: right;
+
+  font-size: 10px;
+
+  color:
+    rgba(255, 255, 255, 0.65);
+}
+
+
+.affordability-bar-row i {
+  display: block;
+
+  height: 56px;
+
+  max-width:
+    calc(
+      100% - 105px
+    );
+
+  border-radius: 3px;
+}
+
+
+.affordability-down-bar {
+  background: #d6a047;
+}
+
+
+.affordability-financed-bar {
+  background: #7667ee;
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 1100px) {
+
+  .investment-top {
+    grid-template-columns:
+      1fr;
+
+    gap: 35px;
+  }
+
+
+  .investment-copy {
+    max-width: 650px;
+  }
+
+
+  .investment-stats {
+    grid-template-columns:
+      1fr
+      1fr;
+  }
+
+
+  .investment-stat:nth-child(2) {
+    border-right: none;
+  }
+
+
+  .investment-stat:nth-child(-n + 2) {
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.09);
+  }
+
+
+  .mortgage-layout,
+  .mortgage-layout-calculator {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .mortgage-primary-result {
+    min-height: 380px;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+  .investment-section {
+    padding: 80px 0;
+  }
+
+
+  .investment-container {
+    width:
+      calc(100% - 36px);
+  }
+
+
+  .investment-heading h2 {
+    font-size:
+      40px !important;
+  }
+
+
+  .investment-stats {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .investment-stat {
+    min-height: 145px;
+
+    border-right: none;
+
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.09);
+  }
+
+
+  .investment-stat:last-child {
+    border-bottom: none;
+  }
+
+
+  .mortgage-tools {
+    padding:
+      26px
+      18px
+      22px;
+  }
+
+
+  .mortgage-tabs {
+    justify-content:
+      flex-start;
+  }
+
+
+  .mortgage-tab {
+    flex:
+      1
+      1
+      calc(
+        50% - 8px
+      );
+
+    padding:
+      0
+      10px;
+  }
+
+
+  .mortgage-result-grid,
+  .refinance-top-results,
+  .affordability-result-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .mortgage-total-actions {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .mortgage-donut-circle {
+    width: 125px;
+    height: 125px;
+  }
+
+
+  .mortgage-line-chart {
+    overflow-x: auto;
+  }
+
+
+  .mortgage-line-chart svg {
+    min-width: 650px;
+  }
+
+
+  .mortgage-year-axis {
+    min-width: 650px;
+  }
+
+
+  .affordability-bar-row span {
+    width: 75px;
+  }
+
+}

@@ -1,0 +1,944 @@
+/* ==========================================================
+   YOURKEY — CINEMATIC VIDEO HERO
+========================================================== */
+
+.cinematic-villa-journey {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  height: 290vh; /* was 258vh: extra scroll for end hold */
+  margin-bottom: 0;
+  background: #030608;
+}
+
+.cinematic-villa-journey + * {
+  margin-top: 0 !important;
+}
+
+
+/* ==========================================================
+   STICKY VIEWPORT
+========================================================== */
+
+.cinematic-sticky {
+  position: sticky;
+  z-index: 5;
+  top: var(--site-header-height, 82px);
+
+  width: 100%;
+  height: calc(100dvh - var(--site-header-height, 82px));
+  min-height: calc(100svh - var(--site-header-height, 82px));
+
+  overflow: hidden;
+  isolation: isolate;
+
+  background: #030608;
+
+  contain: paint;
+}
+
+
+/* ==========================================================
+   VIDEOS
+========================================================== */
+
+.cinematic-video {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center center;
+
+  background: #030608;
+
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+
+  will-change: opacity;
+}
+
+.cinematic-video-one {
+  z-index: 1;
+  opacity: 1;
+}
+
+.cinematic-video-two {
+  z-index: 2;
+  opacity: 0;
+}
+
+
+/* ==========================================================
+   CINEMATIC GRADING
+========================================================== */
+
+.cinematic-color-grade {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    180deg,
+    rgba(3, 7, 11, 0.035) 0%,
+    rgba(3, 7, 11, 0.005) 46%,
+    rgba(3, 7, 11, 0.15) 100%
+  );
+}
+
+.cinematic-left-shade {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    rgba(2, 7, 11, 0.70) 0%,
+    rgba(2, 7, 11, 0.46) 22%,
+    rgba(2, 7, 11, 0.13) 44%,
+    rgba(2, 7, 11, 0.02) 61%,
+    transparent 72%
+  );
+}
+
+.cinematic-bottom-shade {
+  position: absolute;
+  z-index: 4;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 43%;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(2, 7, 11, 0.08) 33%,
+    rgba(2, 7, 11, 0.32) 71%,
+    rgba(2, 7, 11, 0.68) 100%
+  );
+}
+
+.cinematic-vignette {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+
+  pointer-events: none;
+
+  box-shadow: inset 0 0 125px rgba(0, 0, 0, 0.19);
+}
+
+
+/* ==========================================================
+   MAIN EDITORIAL CONTENT
+========================================================== */
+
+.cinematic-editorial {
+  position: absolute;
+  z-index: 10;
+
+  left: max(4.5vw, calc((100vw - 1540px) / 2));
+
+  top: clamp(92px, 12.5vh, 125px);
+
+  width: min(690px, 48vw);
+
+  pointer-events: none;
+}
+
+
+/* ==========================================================
+   EYEBROW
+========================================================== */
+
+.cinematic-label {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  margin-bottom: 15px;
+}
+
+.cinematic-label > i {
+  width: 42px;
+  height: 1px;
+
+  flex: 0 0 42px;
+
+  background: linear-gradient(
+    90deg,
+    #c9a66b,
+    rgba(201, 166, 107, 0)
+  );
+}
+
+.cinematic-label > small {
+  font-size: 8px;
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: 0.2em;
+
+  color: rgba(255, 255, 255, 0.62);
+}
+
+
+/* ==========================================================
+   HERO HEADINGS
+========================================================== */
+
+.cinematic-editorial h1,
+.cinematic-editorial h2 {
+  margin: 0;
+
+  max-width: 680px;
+
+  font-family: inherit;
+  font-style: normal;
+
+  font-size: clamp(3.25rem, 4.5vw, 5.3rem);
+
+  font-weight: 500;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.048em;
+
+  color: #f5f3ef;
+
+  text-shadow: 0 6px 28px rgba(0, 0, 0, 0.26);
+}
+
+.cinematic-editorial h1 span,
+.cinematic-editorial h2 span {
+  display: block;
+
+  margin-top: 0;
+
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 500;
+
+  color: #c9a66b;
+}
+
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.cinematic-intro-copy {
+  max-width: 545px;
+
+  margin: 22px 0 0;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.65;
+
+  letter-spacing: 0.005em;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ==========================================================
+   PROPERTY SEARCH
+========================================================== */
+
+.cinematic-property-search {
+  position: absolute;
+  z-index: 16;
+
+  left: max(4.5vw, calc((100vw - 1540px) / 2));
+
+  bottom: 58px;
+
+  width: min(920px, calc(100vw - 13vw - 70px));
+}
+
+
+/* ==========================================================
+   SEARCH TABS
+========================================================== */
+
+.cinematic-search-modes {
+  display: inline-flex;
+
+  width: auto;
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-bottom: 0;
+
+  background: rgba(4, 11, 18, 0.80);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.cinematic-search-modes button {
+  min-width: 104px;
+  height: 42px;
+
+  padding: 0 18px;
+
+  border: 0;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: transparent;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 8px;
+  font-weight: 650;
+
+  letter-spacing: 0.17em;
+
+  color: rgba(255, 255, 255, 0.63);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.cinematic-search-modes button:last-child {
+  border-right: 0;
+}
+
+.cinematic-search-modes button:hover {
+  color: #ffffff;
+}
+
+.cinematic-search-modes button.active {
+  background: #c9a66b;
+  color: #071019;
+}
+
+
+/* ==========================================================
+   SEARCH FIELDS
+========================================================== */
+
+.cinematic-search-fields {
+  display: grid;
+
+  grid-template-columns:
+    1.1fr
+    1fr
+    1fr
+    1.1fr
+    135px;
+
+  width: 100%;
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  background: rgba(4, 11, 18, 0.86);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+}
+
+.cinematic-search-fields label {
+  position: relative;
+
+  min-width: 0;
+  height: 72px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 0 17px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cinematic-search-fields label > span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 6px;
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: 0.18em;
+
+  color: rgba(201, 166, 107, 0.82);
+}
+
+.cinematic-search-fields select {
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.cinematic-search-fields select option {
+  background: #071019;
+  color: #ffffff;
+}
+
+
+/* ==========================================================
+   SEARCH BUTTON
+========================================================== */
+
+.cinematic-search-button {
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 0 17px;
+
+  text-decoration: none;
+
+  background: #c9a66b;
+
+  color: #071019;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.cinematic-search-button span {
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.17em;
+}
+
+.cinematic-search-button i {
+  font-size: 14px;
+  font-style: normal;
+
+  transition: transform 0.3s ease;
+}
+
+.cinematic-search-button:hover {
+  background: #d7b777;
+}
+
+.cinematic-search-button:hover i {
+  transform: translate(3px, -3px);
+}
+
+
+/* ==========================================================
+   SCENE 02
+========================================================== */
+
+.cinematic-editorial-two {
+  top: 39%;
+
+  max-width: 650px;
+
+  transform: translateY(-50%);
+}
+
+
+/* ==========================================================
+   FINALE
+========================================================== */
+
+.cinematic-finale {
+  position: absolute;
+  z-index: 12;
+
+  left: max(4.5vw, calc((100vw - 1540px) / 2));
+
+  top: 31%;
+
+  width: min(620px, 46vw);
+
+  transform: translateY(-50%);
+}
+
+.cinematic-finale-label {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  margin-bottom: 14px;
+}
+
+.cinematic-finale-label i {
+  width: 42px;
+  height: 1px;
+
+  background: #c9a66b;
+}
+
+.cinematic-finale-label span {
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+
+  color: rgba(255, 255, 255, 0.61);
+}
+
+.cinematic-finale h2 {
+  margin: 0;
+
+  font-family: inherit;
+  font-style: normal;
+
+  font-size: clamp(3.3rem, 4.5vw, 5.25rem);
+
+  font-weight: 500;
+
+  line-height: 0.97;
+
+  letter-spacing: -0.048em;
+
+  color: #f5f3ef;
+
+  text-shadow: 0 6px 26px rgba(0, 0, 0, 0.25);
+}
+
+.cinematic-finale h2 span {
+  display: block;
+
+  font-style: normal;
+  font-weight: 500;
+
+  color: #c9a66b;
+}
+
+.cinematic-finale > p {
+  max-width: 380px;
+
+  margin: 18px 0 22px;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* ==========================================================
+   FINALE BUTTON
+========================================================== */
+
+.cinematic-finale-button {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 20px;
+
+  min-height: 50px;
+
+  padding: 0 19px 0 21px;
+
+  border: 1px solid rgba(201, 166, 107, 0.62);
+
+  background: rgba(4, 11, 18, 0.45);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  text-decoration: none;
+
+  color: #ffffff;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.cinematic-finale-button span {
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.cinematic-finale-button i {
+  font-size: 14px;
+  font-style: normal;
+
+  color: #c9a66b;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.cinematic-finale-button:hover {
+  border-color: #c9a66b;
+
+  background: #c9a66b;
+
+  color: #071019;
+}
+
+.cinematic-finale-button:hover i {
+  color: #071019;
+
+  transform: translate(3px, -3px);
+}
+
+
+/* ==========================================================
+   BOTTOM PROGRESS
+========================================================== */
+
+.cinematic-bottom-ui {
+  position: absolute;
+  z-index: 18;
+
+  left: 50%;
+  bottom: 10px;
+
+  width: min(1540px, calc(100% - 9vw));
+
+  transform: translateX(-50%);
+
+  display: grid;
+
+  grid-template-columns: auto 1fr auto;
+
+  align-items: center;
+
+  gap: 27px;
+
+  pointer-events: none;
+}
+
+.cinematic-scroll-text,
+.cinematic-end-label {
+  font-size: 6px;
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+
+  color: rgba(255, 255, 255, 0.34);
+}
+
+.cinematic-progress {
+  position: relative;
+
+  height: 1px;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.13);
+}
+
+.cinematic-progress > div {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    #c9a66b,
+    #e1c78e
+  );
+}
+
+
+/* ==========================================================
+   DESKTOP SAFETY
+========================================================== */
+
+@media (min-width: 1151px) {
+  .cinematic-property-search {
+    max-width: calc(100vw - 260px - 4.5vw);
+  }
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1150px) {
+  .cinematic-villa-journey {
+    height: 280vh; /* was 248vh */
+  }
+
+  .cinematic-editorial,
+  .cinematic-finale {
+    left: 32px;
+
+    width: min(620px, calc(100% - 80px));
+  }
+
+  .cinematic-editorial {
+    top: 82px;
+  }
+
+  .cinematic-property-search {
+    left: 32px;
+
+    bottom: 70px;
+
+    width: min(760px, calc(100% - 64px));
+  }
+
+  .cinematic-search-fields {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cinematic-search-fields label {
+    height: 59px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .cinematic-search-fields label:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .cinematic-search-button {
+    grid-column: 1 / -1;
+
+    min-height: 52px;
+  }
+
+  .cinematic-editorial-two {
+    top: 39%;
+  }
+
+  .cinematic-finale {
+    top: 31%;
+  }
+
+  .cinematic-bottom-ui {
+    width: calc(100% - 64px);
+  }
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+  .cinematic-villa-journey {
+    height: 264vh; /* was 232vh */
+  }
+
+  .cinematic-video {
+    object-position: center center;
+  }
+
+  .cinematic-left-shade {
+    background: linear-gradient(
+      90deg,
+      rgba(2, 7, 11, 0.68),
+      rgba(2, 7, 11, 0.2)
+    );
+  }
+
+  .cinematic-bottom-shade {
+    height: 72%;
+
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(2, 7, 11, 0.12) 32%,
+      rgba(2, 7, 11, 0.75) 100%
+    );
+  }
+
+  .cinematic-vignette {
+    box-shadow: inset 0 0 85px rgba(0, 0, 0, 0.18);
+  }
+
+  .cinematic-editorial {
+    left: 18px;
+
+    top: 64px;
+
+    width: calc(100% - 36px);
+  }
+
+  .cinematic-editorial h1,
+  .cinematic-editorial h2 {
+    max-width: 100%;
+
+    font-size: clamp(2.7rem, 11.4vw, 4rem);
+
+    line-height: 0.98;
+  }
+
+  .cinematic-intro-copy {
+    max-width: 340px;
+
+    margin-top: 15px;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+  }
+
+  .cinematic-property-search {
+    left: 18px;
+
+    bottom: 45px;
+
+    width: calc(100% - 36px);
+  }
+
+  .cinematic-search-modes {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    width: 100%;
+  }
+
+  .cinematic-search-modes button {
+    min-width: 0;
+
+    height: 37px;
+
+    padding: 0 8px;
+
+    font-size: 7px;
+  }
+
+  .cinematic-search-fields {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cinematic-search-fields label {
+    height: 54px;
+
+    padding: 0 11px;
+  }
+
+  .cinematic-search-fields label > span {
+    font-size: 5px;
+  }
+
+  .cinematic-search-fields select {
+    font-size: 9px;
+  }
+
+  .cinematic-search-button {
+    min-height: 48px;
+  }
+
+  .cinematic-editorial-two {
+    top: 39%;
+  }
+
+  .cinematic-finale {
+    left: 18px;
+
+    top: 31%;
+
+    width: calc(100% - 36px);
+  }
+
+  .cinematic-finale h2 {
+    font-size: clamp(2.85rem, 11.2vw, 4.2rem);
+  }
+
+  .cinematic-finale > p {
+    font-size: 12px;
+  }
+
+  .cinematic-bottom-ui {
+    display: none;
+  }
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 460px) {
+  .cinematic-villa-journey {
+    height: 256vh; /* was 224vh */
+  }
+
+  .cinematic-editorial {
+    top: 58px;
+  }
+
+  .cinematic-editorial h1,
+  .cinematic-editorial h2 {
+    font-size: clamp(2.45rem, 10.8vw, 3.65rem);
+  }
+
+  .cinematic-search-fields label {
+    padding: 0 9px;
+  }
+
+  .cinematic-search-fields label > span {
+    font-size: 4.8px;
+  }
+
+  .cinematic-search-fields select {
+    font-size: 8px;
+  }
+
+  .cinematic-finale {
+    top: 30%;
+  }
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-search-button,
+  .cinematic-finale-button,
+  .cinematic-search-button i,
+  .cinematic-finale-button i {
+    transition: none;
+  }
+}

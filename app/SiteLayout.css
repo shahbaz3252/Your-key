@@ -1,0 +1,334 @@
+/* ==========================================================
+   YOURKEY — GLOBAL SITE LAYOUT SYSTEM
+   One alignment system for:
+   Header
+   Footer
+   Homepage sections
+   Internal pages
+========================================================== */
+
+:root {
+  --site-max-width: 1540px;
+
+  /*
+    Desktop = responsive luxury spacing
+    Small screens = never less than 18px
+  */
+  --site-gutter:
+    clamp(
+      18px,
+      4.5vw,
+      72px
+    );
+
+  --site-content-width:
+    min(
+      var(--site-max-width),
+      calc(
+        100% -
+        (
+          var(--site-gutter) * 2
+        )
+      )
+    );
+}
+
+
+/* ==========================================================
+   GLOBAL SAFETY
+========================================================== */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+
+/* ==========================================================
+   GLOBAL UTILITY
+========================================================== */
+
+.site-container {
+  width:
+    var(--site-content-width);
+
+  margin-inline:
+    auto;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.luxury-header-inner {
+  width:
+    var(--site-content-width)
+    !important;
+
+  margin-inline:
+    auto !important;
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.luxury-footer-container {
+  width:
+    var(--site-content-width)
+    !important;
+
+  margin-inline:
+    auto !important;
+}
+
+
+/* ==========================================================
+   HOMEPAGE CONTAINERS
+========================================================== */
+
+/*
+  Existing + likely current section container names.
+  Non-existing selectors are harmless.
+*/
+
+.towers-container,
+
+.property-sale-container,
+.property-for-sale-container,
+.properties-container,
+.featured-properties-container,
+
+.rent-container,
+.rent-properties-container,
+
+.investment-container,
+.investment-analytics-container,
+
+.locations-container,
+.communities-container,
+.coveted-locations-container,
+
+.bespoke-container,
+
+.reviews-container,
+
+.faq-container,
+
+.valuation-container,
+.property-valuation-container,
+
+.agents-container {
+  width:
+    var(--site-content-width)
+    !important;
+
+  max-width:
+    var(--site-max-width)
+    !important;
+
+  margin-left:
+    auto !important;
+
+  margin-right:
+    auto !important;
+}
+
+
+/* ==========================================================
+   ABOUT DROPDOWN
+========================================================== */
+
+.luxury-dropdown-about {
+  width:
+    330px;
+}
+
+
+/* ==========================================================
+   PREVENT CONTENT FROM OVERFLOWING GRID/FLEX
+========================================================== */
+
+.luxury-header-inner > *,
+.luxury-footer-main > *,
+.agents-team-grid > * {
+  min-width: 0;
+}
+
+
+/* ==========================================================
+   LARGE LAPTOP
+========================================================== */
+
+@media (
+  max-width: 1380px
+) {
+
+  :root {
+    --site-gutter:
+      clamp(
+        26px,
+        3.2vw,
+        48px
+      );
+  }
+
+
+  /*
+    Existing Header.css changes its own width
+    here. This keeps our global system in control.
+  */
+
+  .luxury-header-inner,
+  .luxury-footer-container,
+
+  .towers-container,
+
+  .property-sale-container,
+  .property-for-sale-container,
+  .properties-container,
+  .featured-properties-container,
+
+  .rent-container,
+  .rent-properties-container,
+
+  .investment-container,
+  .investment-analytics-container,
+
+  .locations-container,
+  .communities-container,
+  .coveted-locations-container,
+
+  .bespoke-container,
+
+  .reviews-container,
+
+  .faq-container,
+
+  .valuation-container,
+  .property-valuation-container,
+
+  .agents-container {
+    width:
+      var(--site-content-width)
+      !important;
+  }
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (
+  max-width: 1050px
+) {
+
+  :root {
+    --site-gutter:
+      24px;
+  }
+
+
+  .luxury-header-inner,
+  .luxury-footer-container,
+
+  .towers-container,
+
+  .property-sale-container,
+  .property-for-sale-container,
+  .properties-container,
+  .featured-properties-container,
+
+  .rent-container,
+  .rent-properties-container,
+
+  .investment-container,
+  .investment-analytics-container,
+
+  .locations-container,
+  .communities-container,
+  .coveted-locations-container,
+
+  .bespoke-container,
+
+  .reviews-container,
+
+  .faq-container,
+
+  .valuation-container,
+  .property-valuation-container,
+
+  .agents-container {
+    width:
+      var(--site-content-width)
+      !important;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (
+  max-width: 650px
+) {
+
+  :root {
+    --site-gutter:
+      18px;
+  }
+
+
+  .luxury-header-inner,
+  .luxury-footer-container,
+
+  .towers-container,
+
+  .property-sale-container,
+  .property-for-sale-container,
+  .properties-container,
+  .featured-properties-container,
+
+  .rent-container,
+  .rent-properties-container,
+
+  .investment-container,
+  .investment-analytics-container,
+
+  .locations-container,
+  .communities-container,
+  .coveted-locations-container,
+
+  .bespoke-container,
+
+  .reviews-container,
+
+  .faq-container,
+
+  .valuation-container,
+  .property-valuation-container,
+
+  .agents-container {
+    width:
+      var(--site-content-width)
+      !important;
+  }
+
+}

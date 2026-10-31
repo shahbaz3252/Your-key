@@ -1,0 +1,989 @@
+/* ==========================================================
+   YOURKEY — PROPERTY FOR SALE
+   COMPACT LUXURY SECTION
+========================================================== */
+
+.property-sale-section {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    80px
+    0
+    48px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #071019 0%,
+      #0a1624 100%
+    );
+
+  color:
+    #ffffff;
+}
+
+
+/* subtle architectural vertical grid */
+.property-sale-section::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 24.9%,
+      rgba(255, 255, 255, 0.022) 25%,
+      transparent 25.1%,
+      transparent 49.9%,
+      rgba(255, 255, 255, 0.022) 50%,
+      transparent 50.1%,
+      transparent 74.9%,
+      rgba(255, 255, 255, 0.022) 75%,
+      transparent 75.1%
+    );
+}
+
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.property-sale-container {
+  position: relative;
+
+  z-index: 2;
+
+  width:
+    min(
+      1540px,
+      calc(100% - 8vw)
+    );
+
+  margin:
+    0 auto;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.property-sale-header {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 50px;
+
+  margin-bottom:
+    38px;
+}
+
+
+/* ==========================================================
+   EYEBROW
+========================================================== */
+
+.property-sale-eyebrow {
+  margin-bottom:
+    11px;
+
+  font-size:
+    11px;
+
+  font-weight:
+    600;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    0.16em;
+
+  color:
+    #c9a66b;
+}
+
+
+/* ==========================================================
+   MAIN HEADING
+========================================================== */
+
+.property-sale-heading h2 {
+  margin: 0;
+
+  font-family:
+    inherit;
+
+  font-style:
+    normal;
+
+  font-size:
+    50px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1.05;
+
+  letter-spacing:
+    -0.035em;
+
+  color:
+    #ffffff;
+}
+
+
+/* ==========================================================
+   VIEW ALL BUTTON
+========================================================== */
+
+.property-sale-view-all {
+  min-width:
+    320px;
+
+  min-height:
+    46px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  padding:
+    0
+    24px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.34
+    );
+
+  background:
+    transparent;
+
+  text-decoration:
+    none;
+
+  font-size:
+    11px;
+
+  font-weight:
+    600;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    0.12em;
+
+  color:
+    #ffffff;
+
+  transition:
+    background
+    0.3s
+    ease,
+    border-color
+    0.3s
+    ease,
+    color
+    0.3s
+    ease,
+    transform
+    0.3s
+    ease;
+}
+
+
+.property-sale-view-all:hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    #c9a66b;
+
+  background:
+    #c9a66b;
+
+  color:
+    #071019;
+}
+
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.property-sale-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap:
+    24px;
+}
+
+
+/* ==========================================================
+   PROPERTY CARD
+========================================================== */
+
+.property-sale-card {
+  position: relative;
+
+  min-width:
+    0;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+
+  background:
+    #0a1727;
+
+  transition:
+    transform
+    0.4s
+    ease,
+    border-color
+    0.4s
+    ease,
+    box-shadow
+    0.4s
+    ease;
+}
+
+
+.property-sale-card:hover {
+  transform:
+    translateY(-5px);
+
+  border-color:
+    rgba(
+      201,
+      166,
+      107,
+      0.42
+    );
+
+  box-shadow:
+    0
+    25px
+    60px
+    rgba(
+      0,
+      0,
+      0,
+      0.2
+    );
+}
+
+
+/* ==========================================================
+   CARD LINK
+========================================================== */
+
+.property-sale-card-link {
+  position:
+    absolute;
+
+  z-index:
+    8;
+
+  inset:
+    0;
+}
+
+
+/* ==========================================================
+   IMAGE
+========================================================== */
+
+.property-sale-image-wrap {
+  position:
+    relative;
+
+  width:
+    100%;
+
+  height:
+    240px;
+
+  overflow:
+    hidden;
+
+  background:
+    #030608;
+}
+
+
+.property-sale-image {
+  width:
+    100%;
+
+  height:
+    100%;
+
+  display:
+    block;
+
+  object-fit:
+    cover;
+
+  transition:
+    transform
+    0.8s
+    cubic-bezier(
+      0.2,
+      0.75,
+      0.25,
+      1
+    );
+}
+
+
+.property-sale-card:hover
+.property-sale-image {
+  transform:
+    scale(1.04);
+}
+
+
+/* ==========================================================
+   IMAGE OVERLAY
+========================================================== */
+
+.property-sale-image-overlay {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  pointer-events:
+    none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(2, 7, 11, 0.02) 45%,
+      rgba(2, 7, 11, 0.24) 100%
+    );
+}
+
+
+/* ==========================================================
+   TAGS
+========================================================== */
+
+.property-sale-tags {
+  position:
+    absolute;
+
+  z-index:
+    4;
+
+  top:
+    16px;
+
+  left:
+    16px;
+
+  display:
+    flex;
+}
+
+
+.property-sale-buy,
+.property-sale-type {
+  min-height:
+    30px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  padding:
+    0
+    12px;
+
+  font-size:
+    10px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    0.04em;
+}
+
+
+.property-sale-buy {
+  background:
+    #c9963d;
+
+  color:
+    #ffffff;
+}
+
+
+.property-sale-type {
+  background:
+    #101d2f;
+
+  color:
+    #ffffff;
+}
+
+
+/* ==========================================================
+   HEART
+========================================================== */
+
+.property-sale-heart {
+  position:
+    absolute;
+
+  z-index:
+    12;
+
+  top:
+    16px;
+
+  right:
+    16px;
+
+  width:
+    36px;
+
+  height:
+    36px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  padding:
+    0;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.24
+    );
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(
+      4,
+      10,
+      16,
+      0.55
+    );
+
+  backdrop-filter:
+    blur(7px);
+
+  -webkit-backdrop-filter:
+    blur(7px);
+
+  color:
+    #ffffff;
+
+  cursor:
+    pointer;
+
+  transition:
+    background
+    0.3s
+    ease,
+    color
+    0.3s
+    ease;
+}
+
+
+.property-sale-heart svg {
+  width:
+    18px;
+
+  height:
+    18px;
+}
+
+
+.property-sale-heart:hover {
+  background:
+    #c9a66b;
+
+  color:
+    #071019;
+}
+
+
+/* ==========================================================
+   CARD CONTENT
+========================================================== */
+
+.property-sale-content {
+  padding:
+    22px
+    22px
+    21px;
+}
+
+
+/* ==========================================================
+   PRICE
+========================================================== */
+
+.property-sale-price {
+  margin-bottom:
+    18px;
+
+  font-size:
+    24px;
+
+  font-weight:
+    600;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    -0.025em;
+
+  color:
+    #c99a48;
+}
+
+
+/* ==========================================================
+   PROPERTY STATS
+========================================================== */
+
+.property-sale-stats {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap:
+    16px;
+}
+
+
+.property-sale-stat {
+  min-width:
+    0;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    5px;
+}
+
+
+.property-sale-stat-value {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    7px;
+}
+
+
+.property-sale-stat-value svg {
+  width:
+    16px;
+
+  height:
+    16px;
+
+  flex:
+    0
+    0
+    auto;
+
+  color:
+    #c9a66b;
+}
+
+
+.property-sale-stat-value strong {
+  font-size:
+    15px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1;
+
+  color:
+    #ffffff;
+}
+
+
+.property-sale-stat > span {
+  font-size:
+    10px;
+
+  font-weight:
+    500;
+
+  line-height:
+    1.2;
+
+  letter-spacing:
+    0.04em;
+
+  color:
+    #ffffff;
+}
+
+
+/* ==========================================================
+   DIVIDER
+========================================================== */
+
+.property-sale-divider {
+  width:
+    100%;
+
+  height:
+    1px;
+
+  margin:
+    17px
+    0
+    16px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+}
+
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.property-sale-content h3 {
+  margin:
+    0
+    0
+    9px;
+
+  font-family:
+    inherit;
+
+  font-style:
+    normal;
+
+  font-size:
+    18px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1.2;
+
+  letter-spacing:
+    -0.025em;
+
+  color:
+    #ffffff;
+}
+
+
+/* ==========================================================
+   LOCATION
+========================================================== */
+
+.property-sale-location {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    8px;
+}
+
+
+.property-sale-location svg {
+  width:
+    15px;
+
+  height:
+    15px;
+
+  flex:
+    0
+    0
+    auto;
+
+  color:
+    #c9a66b;
+}
+
+
+.property-sale-location span {
+  font-size:
+    11px;
+
+  font-weight:
+    500;
+
+  line-height:
+    1.3;
+
+  color:
+    #ffffff;
+}
+
+
+/* ==========================================================
+   DESKTOP VIEWPORT FIT
+========================================================== */
+
+@media (
+  min-width: 1200px
+) and (
+  min-height: 780px
+) {
+
+  .property-sale-section {
+    min-height:
+      calc(
+        100vh - 82px
+      );
+
+    display:
+      flex;
+
+    align-items:
+      center;
+  }
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1100px) {
+
+  .property-sale-section {
+    padding:
+      70px
+      0;
+  }
+
+
+  .property-sale-container {
+    width:
+      calc(
+        100% - 64px
+      );
+  }
+
+
+  .property-sale-heading h2 {
+    font-size:
+      46px;
+  }
+
+
+  .property-sale-grid {
+    grid-template-columns:
+      1fr
+      1fr;
+  }
+
+
+  .property-sale-card:last-child {
+    grid-column:
+      1 / -1;
+  }
+
+
+  .property-sale-image-wrap {
+    height:
+      250px;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+  .property-sale-section {
+    padding:
+      64px
+      0;
+  }
+
+
+  .property-sale-container {
+    width:
+      calc(
+        100% - 36px
+      );
+  }
+
+
+  .property-sale-header {
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+
+    gap:
+      25px;
+
+    margin-bottom:
+      35px;
+  }
+
+
+  .property-sale-heading h2 {
+    font-size:
+      40px;
+
+    line-height:
+      1.05;
+  }
+
+
+  .property-sale-view-all {
+    width:
+      100%;
+
+    min-width:
+      0;
+
+    min-height:
+      46px;
+  }
+
+
+  .property-sale-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .property-sale-card:last-child {
+    grid-column:
+      auto;
+  }
+
+
+  .property-sale-image-wrap {
+    height:
+      225px;
+  }
+
+
+  .property-sale-content {
+    padding:
+      21px
+      18px;
+  }
+
+
+  .property-sale-price {
+    font-size:
+      22px;
+  }
+
+
+  .property-sale-content h3 {
+    font-size:
+      17px;
+  }
+
+}

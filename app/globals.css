@@ -1,0 +1,2735 @@
+@import "tailwindcss";
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background: #0a1628;
+  color: #ffffff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+a,
+select,
+input,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* ========================================
+   MORTGAGE RANGE SLIDERS
+   Exact dark navy look
+======================================== */
+
+.mortgage-range {
+  --range-progress: 0%;
+
+  width: 100%;
+  height: 7px;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  display: block;
+
+  border: none;
+  border-radius: 999px;
+  outline: none;
+
+  cursor: pointer;
+
+  background: linear-gradient(
+    to right,
+    #10233a 0%,
+    #10233a var(--range-progress),
+    #2e4057 var(--range-progress),
+    #2e4057 100%
+  );
+}
+
+
+/* ========================================
+   CHROME / EDGE / SAFARI TRACK
+======================================== */
+
+.mortgage-range::-webkit-slider-runnable-track {
+  height: 7px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+}
+
+
+/* ========================================
+   CHROME / EDGE / SAFARI THUMB
+======================================== */
+
+.mortgage-range::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 18px;
+  height: 18px;
+
+  margin-top: -5.5px;
+
+  border: 1px solid #0b192b;
+  border-radius: 50%;
+
+  background: #21344c;
+
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
+}
+
+
+/* ========================================
+   FIREFOX TRACK
+======================================== */
+
+.mortgage-range::-moz-range-track {
+  height: 7px;
+  border: none;
+  border-radius: 999px;
+  background: #2e4057;
+}
+
+
+/* Firefox active portion */
+
+.mortgage-range::-moz-range-progress {
+  height: 7px;
+  border-radius: 999px;
+  background: #10233a;
+}
+
+
+/* ========================================
+   FIREFOX THUMB
+======================================== */
+
+.mortgage-range::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+
+  border: 1px solid #0b192b;
+  border-radius: 50%;
+
+  background: #21344c;
+
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
+}
+
+
+/* ========================================
+   REMOVE DEFAULT BLUE FOCUS
+======================================== */
+
+.mortgage-range:focus {
+  outline: none;
+}
+
+.mortgage-range:focus-visible {
+  outline: none;
+}
+
+.mortgage-range:focus::-webkit-slider-thumb {
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.mortgage-range:focus::-moz-range-thumb {
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ==========================================
+   YOURKEY — CINEMATIC LUXURY SYSTEM
+========================================== */
+
+:root {
+  --yk-black: #05080b;
+  --yk-midnight: #08121d;
+  --yk-gold: #c8a66b;
+  --yk-gold-light: #dfc58e;
+  --yk-ivory: #f2efe8;
+  --yk-muted: #929ca6;
+}
+
+.yk-hero-scroll {
+  position: relative;
+  height: 430vh;
+  background: var(--yk-black);
+}
+
+.yk-hero-sticky {
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+  height: 100svh;
+
+  overflow: hidden;
+
+  background: var(--yk-black);
+
+  isolation: isolate;
+}
+
+.yk-hero-bg {
+  position: absolute;
+  inset: -4%;
+
+  z-index: -5;
+
+  width: 108%;
+  height: 108%;
+
+  background:
+    url("/images/hero-bg.png")
+    center / cover
+    no-repeat;
+
+  will-change: transform;
+}
+
+.yk-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: -4;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 7, 11, 0.96),
+      rgba(4, 10, 16, 0.72) 42%,
+      rgba(5, 12, 18, 0.3) 75%,
+      rgba(4, 8, 12, 0.65)
+    );
+}
+
+.yk-hero-vignette {
+  position: absolute;
+  inset: 0;
+
+  z-index: -3;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(3, 7, 10, 0.2),
+      transparent 38%,
+      rgba(3, 7, 10, 0.5) 76%,
+      #05080b 110%
+    ),
+    radial-gradient(
+      circle at 72% 36%,
+      rgba(71, 122, 160, 0.15),
+      transparent 32%
+    );
+}
+
+.yk-noise {
+  pointer-events: none;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.85'/%3E%3C/svg%3E");
+
+  opacity: 0.025;
+}
+
+.yk-hero-orb {
+  position: absolute;
+
+  z-index: -2;
+
+  border-radius: 999px;
+
+  filter: blur(80px);
+
+  pointer-events: none;
+}
+
+.yk-hero-orb-one {
+  top: 18%;
+  right: 12%;
+
+  width: 420px;
+  height: 420px;
+
+  background:
+    rgba(58, 112, 150, 0.13);
+}
+
+.yk-hero-orb-two {
+  bottom: 0;
+  left: 25%;
+
+  width: 330px;
+  height: 330px;
+
+  background:
+    rgba(200, 166, 107, 0.07);
+}
+
+.yk-hero-title {
+  display: flex;
+
+  flex-direction: column;
+
+  max-width: 900px;
+
+  line-height: 0.89;
+
+  letter-spacing: -0.055em;
+}
+
+.yk-hero-title-small {
+  margin-bottom: 12px;
+
+  font-size:
+    clamp(2.3rem, 5vw, 5.1rem);
+
+  font-weight: 300;
+
+  color:
+    rgba(255, 255, 255, 0.9);
+}
+
+.yk-hero-title-large {
+  font-family: inherit;
+
+  font-size:
+    clamp(4rem, 8.5vw, 8.5rem);
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  color:
+    var(--yk-gold-light);
+
+  text-shadow:
+    0 20px 70px
+    rgba(0, 0, 0, 0.25);
+}
+
+.yk-scroll-chapter {
+  position: absolute;
+
+  z-index: 25;
+
+  top: 50%;
+
+  width:
+    min(660px, 80vw);
+
+  transform:
+    translateY(-50%);
+
+  will-change:
+    transform,
+    opacity,
+    filter;
+}
+
+.yk-scroll-chapter-left {
+  left:
+    max(
+      5vw,
+      calc(
+        (100vw - 1440px) / 2
+        + 48px
+      )
+    );
+}
+
+.yk-scroll-chapter-right {
+  right:
+    max(
+      6vw,
+      calc(
+        (100vw - 1440px) / 2
+        + 60px
+      )
+    );
+
+  text-align: right;
+}
+
+.yk-scroll-chapter h2 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      3.2rem,
+      6.5vw,
+      7rem
+    );
+
+  font-weight: 300;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.055em;
+
+  color: #ffffff;
+}
+
+.yk-scroll-chapter h2 em {
+  font-family: inherit;
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  color: #d7b878;
+}
+
+.yk-scroll-chapter p {
+  max-width: 430px;
+
+  margin-top: 28px;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.46
+    );
+}
+
+.yk-scroll-chapter-right p {
+  margin-left: auto;
+}
+
+.yk-intelligence-panel {
+  position: relative;
+
+  padding: 28px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.09
+    );
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(9, 19, 29, 0.86),
+      rgba(6, 12, 18, 0.7)
+    );
+
+  backdrop-filter:
+    blur(24px);
+
+  box-shadow:
+    0 30px 100px
+    rgba(0, 0, 0, 0.34);
+
+  overflow: hidden;
+}
+
+.yk-intelligence-panel::before {
+  content: "";
+
+  position: absolute;
+
+  top: -120px;
+  right: -100px;
+
+  width: 260px;
+  height: 260px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      78,
+      138,
+      175,
+      0.12
+    );
+
+  filter:
+    blur(60px);
+
+  pointer-events: none;
+}
+
+.yk-ai-dot {
+  display: inline-block;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 999px;
+
+  background:
+    var(--yk-gold);
+
+  box-shadow:
+    0 0 18px
+    rgba(200, 166, 107, 0.8);
+
+  animation:
+    ykPulse
+    2.4s
+    ease-in-out
+    infinite;
+}
+
+.yk-primary-button {
+  display: flex;
+
+  width: 100%;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  padding:
+    18px
+    20px;
+
+  background:
+    var(--yk-gold);
+
+  color:
+    #081018;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.16em;
+
+  text-transform:
+    uppercase;
+
+  transition:
+    0.3s;
+}
+
+.yk-primary-button:hover {
+  background:
+    #ddbd82;
+
+  transform:
+    translateY(-2px);
+}
+
+.yk-eyebrow {
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing:
+    0.22em;
+
+  text-transform:
+    uppercase;
+
+  color:
+    var(--yk-gold);
+}
+
+.yk-section-title {
+  font-size:
+    clamp(
+      2.8rem,
+      6vw,
+      6rem
+    );
+
+  font-weight: 300;
+
+  line-height: 0.95;
+
+  letter-spacing:
+    -0.045em;
+}
+
+.yk-serif {
+  font-family: inherit;
+
+  font-style: normal;
+
+  font-weight: 400;
+}
+
+
+@keyframes ykPulse {
+
+  0%,
+  100% {
+    opacity: 0.55;
+
+    transform:
+      scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      scale(1.15);
+  }
+
+}
+
+
+@media (max-width: 767px) {
+
+  .yk-hero-scroll {
+    height: 380vh;
+  }
+
+  .yk-hero-overlay {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(3, 7, 11, 0.68),
+        rgba(3, 7, 11, 0.84) 55%,
+        #05080b 100%
+      );
+  }
+
+  .yk-scroll-chapter-left,
+  .yk-scroll-chapter-right {
+    left: 24px;
+    right: 24px;
+
+    width: auto;
+
+    text-align: left;
+  }
+
+  .yk-scroll-chapter-right p {
+    margin-left: 0;
+  }
+
+  .yk-scroll-chapter h2 {
+    font-size:
+      clamp(
+        2.7rem,
+        13vw,
+        4.5rem
+      );
+  }
+
+  .yk-intelligence-panel {
+    padding: 20px;
+  }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  .yk-ai-dot {
+    animation:
+      none !important;
+  }
+
+}
+
+
+/* ==========================================================
+   YOURKEY CINEMATIC LUXURY HOMEPAGE
+========================================================== */
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background:
+    #05080b;
+}
+
+.lux-home {
+  overflow: clip;
+
+  background:
+    #05080b;
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.lux-hero-scroll {
+  position: relative;
+
+  height: 440vh;
+
+  background:
+    #05080b;
+}
+
+.lux-hero-sticky {
+  position: sticky;
+
+  top: 0;
+
+  height:
+    100svh;
+
+  overflow: hidden;
+
+  background:
+    #05080b;
+
+  perspective:
+    1200px;
+
+  isolation:
+    isolate;
+}
+
+.lux-hero-bg {
+  position: absolute;
+
+  inset: -5%;
+
+  z-index: -10;
+
+  width: 110%;
+  height: 110%;
+
+  background-size:
+    cover;
+
+  background-position:
+    center;
+
+  transform:
+    scale(1.06);
+
+  will-change:
+    transform;
+}
+
+.lux-hero-dark {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -9;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 6, 9, 0.95) 0%,
+      rgba(3, 8, 12, 0.72) 42%,
+      rgba(3, 8, 12, 0.28) 72%,
+      rgba(3, 6, 9, 0.55) 100%
+    );
+}
+
+.lux-hero-vignette {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -8;
+
+  background:
+    radial-gradient(
+      circle at 70% 45%,
+      rgba(96, 147, 175, 0.14),
+      transparent 32%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.15),
+      transparent 42%,
+      #05080b 112%
+    );
+}
+
+.lux-hero-glow {
+  position: absolute;
+
+  right: 8%;
+  top: 22%;
+
+  width: 38vw;
+  height: 38vw;
+
+  max-width: 650px;
+  max-height: 650px;
+
+  border-radius:
+    999px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(86, 151, 185, 0.15),
+      transparent 68%
+    );
+
+  filter:
+    blur(20px);
+
+  pointer-events:
+    none;
+}
+
+.lux-noise {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 50;
+
+  opacity: 0.025;
+
+  pointer-events:
+    none;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+}
+
+.lux-hero-title {
+  display: flex;
+
+  flex-direction:
+    column;
+
+  line-height:
+    0.88;
+
+  letter-spacing:
+    -0.065em;
+}
+
+.lux-hero-title-top {
+  font-size:
+    clamp(
+      2.4rem,
+      5.8vw,
+      6rem
+    );
+
+  font-weight: 300;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.92
+    );
+}
+
+.lux-hero-title-main {
+  margin-top: 10px;
+
+  font-family:
+    inherit;
+
+  font-size:
+    clamp(
+      4.5rem,
+      10vw,
+      10.5rem
+    );
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  color:
+    #d7b777;
+}
+
+
+/* ==========================================================
+   SERIF
+========================================================== */
+
+.lux-serif-gold {
+  font-family:
+    inherit;
+
+  font-style:
+    normal;
+
+  font-weight:
+    400;
+
+  color:
+    #d3b16d;
+}
+
+
+/* ==========================================================
+   AI PANEL
+========================================================== */
+
+.lux-ai-panel {
+  width:
+    min(
+      680px,
+      94vw
+    );
+
+  padding:
+    clamp(
+      20px,
+      3vw,
+      34px
+    );
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.1
+    );
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(9, 18, 27, 0.84),
+      rgba(5, 10, 15, 0.68)
+    );
+
+  backdrop-filter:
+    blur(26px);
+
+  -webkit-backdrop-filter:
+    blur(26px);
+
+  box-shadow:
+    0 40px 120px
+    rgba(0, 0, 0, 0.48);
+
+  transform-style:
+    preserve-3d;
+
+  will-change:
+    transform;
+}
+
+.lux-ai-panel::before {
+  content: "";
+
+  position:
+    absolute;
+
+  inset: 0;
+
+  pointer-events:
+    none;
+
+  background:
+    linear-gradient(
+      115deg,
+      transparent,
+      rgba(255, 255, 255, 0.045),
+      transparent
+    );
+
+  transform:
+    translateX(-100%);
+
+  animation:
+    luxShine
+    6s
+    infinite;
+}
+
+.lux-ai-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius:
+    999px;
+
+  background:
+    #c8a66b;
+
+  box-shadow:
+    0 0 18px
+    rgba(200, 166, 107, 0.9);
+
+  animation:
+    luxPulse
+    2s
+    infinite
+    ease-in-out;
+}
+
+
+/* ==========================================================
+   LIGHT HEADINGS
+========================================================== */
+
+.lux-light-title {
+  margin-top: 24px;
+
+  font-size:
+    clamp(
+      3.2rem,
+      7vw,
+      7rem
+    );
+
+  font-weight:
+    300;
+
+  line-height:
+    0.9;
+
+  letter-spacing:
+    -0.065em;
+}
+
+.lux-light-title span {
+  font-family:
+    inherit;
+
+  font-style:
+    normal;
+
+  font-weight:
+    400;
+
+  color:
+    #846944;
+}
+
+
+/* ==========================================================
+   DARK TITLES
+========================================================== */
+
+.lux-dark-title {
+  margin-top: 26px;
+
+  max-width:
+    900px;
+
+  font-size:
+    clamp(
+      3.5rem,
+      7.5vw,
+      7.8rem
+    );
+
+  font-weight:
+    300;
+
+  line-height:
+    0.88;
+
+  letter-spacing:
+    -0.065em;
+
+  color:
+    white;
+}
+
+.lux-dark-title span {
+  font-family:
+    inherit;
+
+  font-style:
+    normal;
+
+  color:
+    #d4b273;
+}
+
+
+/* ==========================================================
+   PROPERTY CARDS
+========================================================== */
+
+.lux-property-card {
+  position:
+    relative;
+
+  overflow:
+    hidden;
+
+  background:
+    #081018;
+
+  perspective:
+    1200px;
+}
+
+.lux-property-card img {
+  position:
+    absolute;
+
+  inset: -8%;
+
+  width: 116%;
+  height: 116%;
+
+  object-fit:
+    cover;
+
+  transition:
+    transform
+    1.2s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+
+  will-change:
+    transform;
+}
+
+.lux-property-card:hover img {
+  transform:
+    scale(1.05);
+}
+
+.lux-card-overlay {
+  position:
+    absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(3, 5, 7, 0.9),
+      rgba(3, 5, 7, 0.05) 65%
+    );
+}
+
+.lux-circle-arrow {
+  display:
+    inline-flex;
+
+  width: 46px;
+  height: 46px;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.24
+    );
+
+  border-radius:
+    999px;
+
+  color:
+    white;
+
+  transition:
+    all
+    0.35s
+    ease;
+}
+
+.lux-property-card:hover
+.lux-circle-arrow {
+  border-color:
+    #c8a66b;
+
+  background:
+    #c8a66b;
+
+  color:
+    #071019;
+
+  transform:
+    rotate(8deg);
+}
+
+
+/* ==========================================================
+   PERSPECTIVE CARD
+========================================================== */
+
+.lux-perspective-card {
+  position:
+    relative;
+
+  min-height:
+    620px;
+
+  overflow:
+    hidden;
+
+  background:
+    #071019;
+
+  transform:
+    perspective(1400px)
+    rotateY(-3deg)
+    rotateX(1deg);
+
+  transition:
+    transform
+    0.8s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+
+  box-shadow:
+    0 40px 90px
+    rgba(
+      26,
+      22,
+      16,
+      0.17
+    );
+}
+
+.lux-perspective-card:hover {
+  transform:
+    perspective(1400px)
+    rotateY(0deg)
+    rotateX(0deg)
+    translateY(-8px);
+}
+
+.lux-perspective-card img {
+  position:
+    absolute;
+
+  inset: -8%;
+
+  width: 116%;
+  height: 116%;
+
+  object-fit:
+    cover;
+}
+
+
+/* ==========================================================
+   BRAND STATEMENT
+========================================================== */
+
+.lux-statement {
+  position:
+    relative;
+
+  display:
+    flex;
+
+  min-height:
+    105svh;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  overflow:
+    hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      #122332,
+      #05080b 58%
+    );
+}
+
+.lux-statement-glow {
+  position:
+    absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(
+      93,
+      143,
+      171,
+      0.13
+    );
+
+  filter:
+    blur(80px);
+}
+
+
+/* ==========================================================
+   INTELLIGENCE MAP
+========================================================== */
+
+.lux-intelligence-map {
+  position:
+    relative;
+
+  min-height:
+    620px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  background:
+    radial-gradient(
+      circle at center,
+      #112536,
+      #07111a 64%
+    );
+
+  box-shadow:
+    inset
+    0
+    0
+    90px
+    rgba(
+      0,
+      0,
+      0,
+      0.35
+    );
+
+  perspective:
+    1000px;
+}
+
+.lux-map-grid {
+  position:
+    absolute;
+
+  inset: -25%;
+
+  background-image:
+    linear-gradient(
+      rgba(
+        255,
+        255,
+        255,
+        0.04
+      )
+      1px,
+      transparent
+      1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(
+        255,
+        255,
+        255,
+        0.04
+      )
+      1px,
+      transparent
+      1px
+    );
+
+  background-size:
+    70px
+    70px;
+
+  transform:
+    perspective(600px)
+    rotateX(55deg)
+    translateY(100px)
+    scale(1.25);
+
+  opacity:
+    0.6;
+}
+
+.lux-node {
+  position:
+    relative;
+
+  z-index:
+    3;
+
+  width:
+    9px;
+
+  height:
+    9px;
+
+  border-radius:
+    50%;
+
+  background:
+    #d8b77c;
+
+  box-shadow:
+    0
+    0
+    22px
+    rgba(
+      216,
+      183,
+      124,
+      0.9
+    );
+}
+
+.lux-node-pulse {
+  position:
+    absolute;
+
+  left:
+    -9px;
+
+  top:
+    -9px;
+
+  width:
+    27px;
+
+  height:
+    27px;
+
+  border:
+    1px solid
+    rgba(
+      216,
+      183,
+      124,
+      0.45
+    );
+
+  border-radius:
+    50%;
+
+  animation:
+    luxNodePulse
+    2.4s
+    infinite;
+}
+
+.lux-map-ring {
+  position:
+    absolute;
+
+  left:
+    32%;
+
+  top:
+    33%;
+
+  width:
+    280px;
+
+  height:
+    280px;
+
+  border:
+    1px solid
+    rgba(
+      120,
+      176,
+      201,
+      0.12
+    );
+
+  border-radius:
+    50%;
+
+  box-shadow:
+    0
+    0
+    80px
+    rgba(
+      88,
+      155,
+      185,
+      0.06
+    );
+}
+
+.lux-map-ring-small {
+  position:
+    absolute;
+
+  right:
+    10%;
+
+  bottom:
+    15%;
+
+  width:
+    140px;
+
+  height:
+    140px;
+
+  border:
+    1px solid
+    rgba(
+      216,
+      183,
+      124,
+      0.12
+    );
+
+  border-radius:
+    50%;
+}
+
+.lux-data-orb,
+.lux-data-orb-2 {
+  position:
+    absolute;
+
+  width:
+    380px;
+
+  height:
+    380px;
+
+  border-radius:
+    50%;
+
+  filter:
+    blur(110px);
+
+  pointer-events:
+    none;
+}
+
+.lux-data-orb {
+  right:
+    -100px;
+
+  top:
+    10%;
+
+  background:
+    rgba(
+      63,
+      132,
+      168,
+      0.15
+    );
+}
+
+.lux-data-orb-2 {
+  left:
+    -180px;
+
+  bottom:
+    -50px;
+
+  background:
+    rgba(
+      199,
+      161,
+      96,
+      0.08
+    );
+}
+
+
+/* ==========================================================
+   REVIEWS
+========================================================== */
+
+.lux-review-glow {
+  position:
+    absolute;
+
+  left:
+    50%;
+
+  top:
+    35%;
+
+  width:
+    500px;
+
+  height:
+    500px;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(
+      75,
+      126,
+      154,
+      0.11
+    );
+
+  filter:
+    blur(100px);
+}
+
+
+/* ==========================================================
+   VALUATION
+========================================================== */
+
+.lux-valuation {
+  position:
+    relative;
+
+  min-height:
+    85svh;
+
+  overflow:
+    hidden;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+}
+
+.lux-valuation-glow {
+  position:
+    absolute;
+
+  right:
+    15%;
+
+  top:
+    20%;
+
+  width:
+    420px;
+
+  height:
+    420px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(
+      217,
+      175,
+      97,
+      0.15
+    );
+
+  filter:
+    blur(100px);
+}
+
+.lux-gold-button {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    45px;
+
+  padding:
+    18px
+    22px;
+
+  background:
+    #c9a96c;
+
+  color:
+    #071019;
+
+  font-size:
+    12px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.16em;
+
+  text-transform:
+    uppercase;
+
+  transition:
+    all
+    0.3s
+    ease;
+}
+
+.lux-gold-button:hover {
+  transform:
+    translateY(-3px);
+
+  background:
+    #dfc38c;
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.lux-big-circle {
+  display:
+    flex;
+
+  width:
+    165px;
+
+  height:
+    165px;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    10px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.15
+    );
+
+  border-radius:
+    50%;
+
+  font-size:
+    11px;
+
+  letter-spacing:
+    0.17em;
+
+  text-transform:
+    uppercase;
+
+  transition:
+    0.45s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+.lux-big-circle:hover {
+  border-color:
+    #c8a66b;
+
+  background:
+    #c8a66b;
+
+  color:
+    #071019;
+
+  transform:
+    scale(1.08)
+    rotate(5deg);
+}
+
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+@keyframes luxPulse {
+
+  0%,
+  100% {
+    opacity:
+      0.45;
+
+    transform:
+      scale(0.85);
+  }
+
+  50% {
+    opacity:
+      1;
+
+    transform:
+      scale(1.15);
+  }
+
+}
+
+
+@keyframes luxNodePulse {
+
+  0% {
+    opacity:
+      0.8;
+
+    transform:
+      scale(0.55);
+  }
+
+  100% {
+    opacity:
+      0;
+
+    transform:
+      scale(1.6);
+  }
+
+}
+
+
+@keyframes luxShine {
+
+  0% {
+    transform:
+      translateX(-120%);
+  }
+
+  35%,
+  100% {
+    transform:
+      translateX(120%);
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 767px) {
+
+  .lux-hero-scroll {
+    height:
+      390vh;
+  }
+
+  .lux-hero-dark {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(
+          3,
+          6,
+          9,
+          0.55
+        ),
+        rgba(
+          3,
+          6,
+          9,
+          0.82
+        ) 50%,
+        #05080b 100%
+      );
+  }
+
+  .lux-ai-panel {
+    transform:
+      none !important;
+  }
+
+  .lux-perspective-card {
+    min-height:
+      480px;
+
+    transform:
+      none;
+  }
+
+  .lux-intelligence-map {
+    min-height:
+      500px;
+  }
+
+  .lux-map-ring {
+    width:
+      200px;
+
+    height:
+      200px;
+  }
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+@media (
+  prefers-reduced-motion:
+    reduce
+) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior:
+      auto !important;
+
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+
+}
+
+
+/* ==========================================================
+   YOURKEY GLOBAL TYPOGRAPHY
+========================================================== */
+
+:root {
+  --font-primary:
+    var(--font-questrial),
+    "Questrial",
+    Arial,
+    sans-serif;
+}
+
+
+/* ==========================================================
+   GLOBAL FONT
+========================================================== */
+
+html,
+body {
+  font-family:
+    var(--font-primary);
+}
+
+body,
+button,
+input,
+textarea,
+select,
+a {
+  font-family:
+    var(--font-primary);
+}
+
+
+/* ==========================================================
+   ALL HEADINGS
+========================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:
+    var(--font-primary);
+
+  font-style:
+    normal;
+
+  font-weight:
+    400;
+}
+
+
+/* ==========================================================
+   REMOVE ITALIC FROM ENTIRE WEBSITE
+========================================================== */
+
+em,
+i,
+cite,
+blockquote {
+  font-style:
+    normal;
+}
+
+
+/* ==========================================================
+   HOMEPAGE GOLD HEADING WORDS
+========================================================== */
+
+.developments-heading h2 span,
+.featured-properties-heading h2 span,
+.investment-heading h2 span,
+.communities-heading h2 span,
+.bespoke-header h2 span,
+.reviews-heading h2 span,
+.faq-header h2 span,
+.valuation-heading h2 span,
+.luxury-footer-brand h2 span {
+  font-family:
+    var(--font-primary) !important;
+
+  font-style:
+    normal !important;
+
+  font-weight:
+    400 !important;
+}
+
+
+/* ==========================================================
+   CINEMATIC TYPOGRAPHY
+========================================================== */
+
+.cinematic-section,
+.cinematic-section *,
+.cinematic-story,
+.cinematic-story *,
+.cinematic-sticky,
+.cinematic-sticky * {
+  font-family:
+    var(--font-primary);
+}
+
+
+/* ==========================================================
+   REMOVE CINEMATIC ITALICS
+========================================================== */
+
+.cinematic-section i,
+.cinematic-story i,
+.cinematic-sticky i {
+  font-style:
+    normal;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.luxury-header,
+.luxury-header *,
+.luxury-mobile-menu,
+.luxury-mobile-menu * {
+  font-family:
+    var(--font-primary);
+}
+
+.luxury-dropdown-head span {
+  font-family:
+    var(--font-primary) !important;
+
+  font-style:
+    normal !important;
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.luxury-footer,
+.luxury-footer * {
+  font-family:
+    var(--font-primary);
+}
+
+
+/* ==========================================================
+   BUTTON / LABEL CONSISTENCY
+========================================================== */
+
+button,
+a,
+small,
+span,
+p,
+strong {
+  font-family:
+    inherit;
+}
+
+
+/* ==========================================================
+   KEEP ICON <i> ELEMENTS WORKING
+========================================================== */
+
+i {
+  font-style:
+    normal;
+}
+
+
+/* ==========================================================
+   GOLD DISPLAY LINES
+========================================================== */
+
+.developments-heading h2 span,
+.featured-properties-heading h2 span,
+.investment-heading h2 span,
+.communities-heading h2 span,
+.bespoke-header h2 span,
+.reviews-heading h2 span,
+.faq-header h2 span,
+.valuation-heading h2 span,
+.luxury-footer-brand h2 span {
+  display:
+    block;
+
+  margin-top:
+    0.04em;
+
+  letter-spacing:
+    -0.055em;
+
+  color:
+    #c9a66b;
+}
+
+
+/* ==========================================================
+   YOURKEY — GLOBAL TYPOGRAPHY SCALE V2
+========================================================== */
+
+:root {
+  --text-body: 17px;
+  --text-body-small: 15px;
+
+  --text-nav: 12px;
+  --text-button: 12px;
+
+  --text-label: 11px;
+  --text-meta: 10px;
+
+  --text-card-title: 22px;
+}
+
+
+/* ==========================================================
+   BASE
+========================================================== */
+
+html {
+  font-size:
+    16px;
+}
+
+body {
+  font-size:
+    var(--text-body);
+
+  line-height:
+    1.7;
+}
+
+p {
+  font-size:
+    var(--text-body);
+
+  line-height:
+    1.72;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size:
+    var(--text-button);
+}
+
+small {
+  font-size:
+    var(--text-label);
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.luxury-nav-link,
+.luxury-nav-trigger {
+  font-size:
+    12px !important;
+}
+
+.luxury-header-cta span {
+  font-size:
+    11px !important;
+}
+
+.luxury-header-mini span {
+  font-size:
+    10px !important;
+}
+
+.luxury-dropdown-head small {
+  font-size:
+    10px !important;
+}
+
+.luxury-dropdown-head span {
+  font-size:
+    18px !important;
+}
+
+.luxury-dropdown-links a span {
+  font-size:
+    13px !important;
+}
+
+.luxury-dropdown-links a small {
+  font-size:
+    10px !important;
+}
+
+
+/* ==========================================================
+   CINEMATIC HERO
+========================================================== */
+
+.cinematic-label > small {
+  font-size:
+    11px !important;
+
+  letter-spacing:
+    0.17em;
+}
+
+.cinematic-intro-copy {
+  font-size:
+    16px !important;
+
+  line-height:
+    1.68 !important;
+}
+
+.cinematic-search-modes button {
+  font-size:
+    11px !important;
+}
+
+.cinematic-search-fields label > span {
+  font-size:
+    10px !important;
+
+  letter-spacing:
+    0.13em;
+}
+
+.cinematic-search-fields select {
+  font-size:
+    14px !important;
+}
+
+.cinematic-search-button span {
+  font-size:
+    11px !important;
+}
+
+.cinematic-finale-label span {
+  font-size:
+    11px !important;
+}
+
+.cinematic-finale > p {
+  font-size:
+    16px !important;
+
+  line-height:
+    1.68 !important;
+}
+
+.cinematic-finale-button span {
+  font-size:
+    11px !important;
+}
+
+.cinematic-scroll-text,
+.cinematic-end-label {
+  font-size:
+    9px !important;
+}
+
+
+/* ==========================================================
+   SECTION LABELS
+========================================================== */
+
+.developments-eyebrow,
+.featured-properties-eyebrow,
+.investment-eyebrow,
+.communities-eyebrow,
+.bespoke-eyebrow,
+.reviews-eyebrow,
+.faq-eyebrow,
+.valuation-eyebrow {
+  font-size:
+    11px !important;
+
+  letter-spacing:
+    0.17em;
+}
+
+
+/* ==========================================================
+   SECTION DESCRIPTIONS
+========================================================== */
+
+.developments-description,
+.featured-properties-description,
+.investment-description,
+.communities-description,
+.bespoke-description,
+.reviews-description,
+.faq-description,
+.valuation-description {
+  font-size:
+    16px !important;
+
+  line-height:
+    1.72 !important;
+}
+
+
+/* ==========================================================
+   NEW SECTION DESCRIPTION FIX
+   Includes Towers, Rent and selector variations
+========================================================== */
+
+.towers-header p,
+.rent-header p,
+.investment-header p,
+.investment-copy p,
+.communities-header p,
+.community-header p,
+.bespoke-header p,
+.bespoke-copy p,
+.reviews-header p,
+.faq-header p,
+.valuation-header p,
+.section-description,
+.section-copy,
+.section-header p {
+  font-size:
+    16px !important;
+
+  line-height:
+    1.7 !important;
+
+  font-weight:
+    400 !important;
+}
+
+
+/* ==========================================================
+   SECTION LINKS / CTAs
+========================================================== */
+
+.developments-link,
+.featured-properties-link,
+.investment-link,
+.communities-link,
+.bespoke-link,
+.reviews-link,
+.faq-link,
+.valuation-link {
+  font-size:
+    11px !important;
+}
+
+
+/* ==========================================================
+   PROPERTY CARDS
+========================================================== */
+
+.property-card small,
+.development-card small,
+.community-card small {
+  font-size:
+    10px !important;
+}
+
+.property-card p,
+.development-card p,
+.community-card p {
+  font-size:
+    15px !important;
+}
+
+.property-card h3,
+.development-card h3,
+.community-card h3 {
+  font-size:
+    clamp(
+      1.35rem,
+      1.7vw,
+      1.85rem
+    ) !important;
+}
+
+
+/* ==========================================================
+   INVESTMENT
+========================================================== */
+
+.investment-stat small,
+.investment-opportunity small {
+  font-size:
+    10px !important;
+}
+
+.investment-stat span,
+.investment-opportunity span {
+  font-size:
+    14px !important;
+}
+
+
+/* ==========================================================
+   BESPOKE SERVICES
+========================================================== */
+
+.bespoke-service-row small {
+  font-size:
+    10px !important;
+}
+
+.bespoke-service-row p {
+  font-size:
+    15px !important;
+}
+
+
+/* ==========================================================
+   REVIEWS
+========================================================== */
+
+.reviews-section blockquote {
+  font-size:
+    clamp(
+      1.6rem,
+      2.15vw,
+      2.2rem
+    ) !important;
+
+  line-height:
+    1.38;
+}
+
+.review-author,
+.review-role {
+  font-size:
+    12px !important;
+}
+
+
+/* ==========================================================
+   FAQ
+========================================================== */
+
+.faq-question {
+  font-size:
+    clamp(
+      1.1rem,
+      1.4vw,
+      1.35rem
+    ) !important;
+}
+
+.faq-answer,
+.faq-answer p {
+  font-size:
+    16px !important;
+
+  line-height:
+    1.72 !important;
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.luxury-footer-kicker > span,
+.luxury-footer-kicker small {
+  font-size:
+    11px !important;
+}
+
+.luxury-footer-contact > p {
+  font-size:
+    16px !important;
+}
+
+.luxury-footer-cta span {
+  font-size:
+    11px !important;
+}
+
+.luxury-footer-column-label {
+  font-size:
+    11px !important;
+}
+
+.luxury-footer-column-brand > p {
+  font-size:
+    15px !important;
+}
+
+.luxury-footer-column nav a span {
+  font-size:
+    13px !important;
+}
+
+.luxury-footer-contact-item small {
+  font-size:
+    10px !important;
+}
+
+.luxury-footer-contact-item a {
+  font-size:
+    14px !important;
+}
+
+.luxury-footer-location small {
+  font-size:
+    10px !important;
+}
+
+.luxury-footer-location strong {
+  font-size:
+    14px !important;
+}
+
+.luxury-footer-meta small {
+  font-size:
+    10px !important;
+}
+
+.luxury-footer-meta strong {
+  font-size:
+    13px !important;
+}
+
+.luxury-footer-meta-end span {
+  font-size:
+    10px !important;
+}
+
+.luxury-footer-bottom p,
+.luxury-footer-bottom a,
+.luxury-footer-bottom span {
+  font-size:
+    10px !important;
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+  :root {
+    --text-body: 16px;
+    --text-body-small: 14px;
+
+    --text-nav: 11px;
+    --text-button: 11px;
+
+    --text-label: 10px;
+  }
+
+
+  p {
+    font-size:
+      16px;
+  }
+
+
+  .cinematic-intro-copy {
+    font-size:
+      15px !important;
+
+    line-height:
+      1.65 !important;
+  }
+
+
+  .cinematic-label > small {
+    font-size:
+      10px !important;
+  }
+
+
+  .cinematic-search-modes button {
+    font-size:
+      10px !important;
+  }
+
+
+  .cinematic-search-fields label > span {
+    font-size:
+      9px !important;
+  }
+
+
+  .cinematic-search-fields select {
+    font-size:
+      12px !important;
+  }
+
+
+  .cinematic-search-button span {
+    font-size:
+      10px !important;
+  }
+
+
+  .developments-description,
+  .featured-properties-description,
+  .investment-description,
+  .communities-description,
+  .bespoke-description,
+  .reviews-description,
+  .faq-description,
+  .valuation-description,
+
+  .towers-header p,
+  .rent-header p,
+
+  .investment-header p,
+  .investment-copy p,
+
+  .communities-header p,
+  .community-header p,
+
+  .bespoke-header p,
+  .bespoke-copy p,
+
+  .reviews-header p,
+  .faq-header p,
+  .valuation-header p,
+
+  .section-description,
+  .section-copy,
+  .section-header p {
+    font-size:
+      15px !important;
+
+    line-height:
+      1.65 !important;
+  }
+
+
+  .cinematic-finale > p {
+    font-size:
+      15px !important;
+
+    line-height:
+      1.65 !important;
+  }
+
+
+  .luxury-footer-contact > p,
+  .luxury-footer-column-brand > p {
+    font-size:
+      15px !important;
+  }
+
+
+  .luxury-footer-column nav a span {
+    font-size:
+      13px !important;
+  }
+
+}
